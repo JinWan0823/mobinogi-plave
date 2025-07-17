@@ -38,6 +38,9 @@
 
   --font-pretendard: "Pretendard", sans-serif;
   --font-jua: "Jua", sans-serif;
+
+  --color-point: #ff69b4;
+  --color-main: #b388ff;
 }
 
 body {
@@ -46,10 +49,54 @@ body {
   font-family: var(--font-pretendard);
 }
 
+button {
+  cursor: pointer;
+}
+
 /* 타이틀에만 Jua 폰트 적용 */
 h1,
 h2,
 h3,
 .title {
   font-family: var(--font-jua);
+}
+
+.bg-main {
+  background: var(--color-main);
+}
+
+.bg-point {
+  background: var(--color-point);
+}
+
+.text-point {
+  color: var(--color-point);
+}
+
+.border-point {
+  border-color: var(--color-point);
+}
+
+.inner {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+.animate-fade-down {
+  animation: fade-down 1.4s ease-in-out infinite;
 }
