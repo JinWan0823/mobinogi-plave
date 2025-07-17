@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function MainBanner() {
   return (
     <div className="w-full min-h-[100vh] bg-main relative overflow-hidden">
-      <div className="inner text-center pt-70 z-999999">
+      <div className="relative inner text-center pt-70 z-999">
         <h1 className="text-8xl text-white">
           모비노기 데이안 서버 <br />
           플레이브 길드
