@@ -1,6 +1,7 @@
 # PLAVE Fan Guild Website (마비노기 모바일 플레이브 길드)
 
-![PLAVE Guild Design](./e4d08a13-031c-44f7-896c-f85a54af0089.png)
+<img width="1940" height="4178" alt="image" src="https://github.com/user-attachments/assets/cb07960f-ca05-41ce-87de-61725d744afa" />
+
 
 ## 소개
 
@@ -62,4 +63,4 @@ npm run dev
 사용된 이미지 및 콘텐츠는 각 권리자에 귀속됩니다.
 
 제작자
-ZZIZZPARK (https://github.com/zzizzpark)
+[ZZIZZPARK (https://github.com/JinWan0823) ]
