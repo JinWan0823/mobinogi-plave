@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Jua } from "next/font/google";
-import Header from "@/_components/common/header";
+import Header from "@/_components/common/Header";
 
 const jua = Jua({
   weight: "400",
