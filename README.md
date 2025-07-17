@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PLAVE Fan Guild Website (마비노기 모바일 플레이브 길드)
 
-## Getting Started
+![PLAVE Guild Design](./e4d08a13-031c-44f7-896c-f85a54af0089.png)
 
-First, run the development server:
+## 소개
+
+PLAVE Fan Guild 웹사이트는 마비노기 모바일 데이안 서버 내 플레이브 길드원들과 팬들을 위한 커뮤니티 플랫폼입니다.  
+길드 소식, 공지사항, 팁 공유, 그리고 유튜브 영상 가이드 등 다양한 정보를 한눈에 확인할 수 있도록 제작되었습니다.
+
+---
+
+## 주요 기능
+
+### 1. 공지사항 & 이벤트 크롤링  
+- 마비노기 모바일 공식 홈페이지의 공지사항과 이벤트 게시판에서 **제목만 주기적으로 크롤링**하여 실시간으로 반영합니다.  
+- 각 게시글 제목은 클릭 시 공식 홈페이지의 원문으로 연결됩니다.  
+
+### 2. 사용자 정보 공유 게시판  
+- MongoDB를 활용해 **사용자들이 직접 정보를 공유하고 요청할 수 있는 게시판**을 운영합니다.  
+- 로그인 없이도 게시글 작성이 가능하며, 개인정보 노출을 최소화하기 위해 CAPTCHA(캡챠) 기능을 도입하여 스팸과 봇 공격을 방지합니다.  
+
+### 3. 유튜브 동영상 자동 연동  
+- 특정 키워드(예: "마비노기 모바일")와 각 직업명 키워드를 포함하는 유튜브 동영상을 API를 통해 불러와 최신 영상 가이드를 제공합니다.  
+- 동영상 썸네일과 제목을 보여주며, 클릭 시 유튜브 공식 페이지로 이동합니다.
+
+---
+
+## 기술 스택
+
+- Next.js (React 기반 서버 사이드 렌더링)  
+- Tailwind CSS (버전 4.x, CSS 내 테마 커스터마이징)  
+- MongoDB (게시판 데이터 저장소)  
+- 크롤링 및 유튜브 API 연동 (서버 사이드에서 비공식 방식으로 구현)  
+- CAPTCHA (스팸 방지용)  
+
+---
+
+## 프로젝트 구조
+
+- `/app` : Next.js 앱 라우트 및 컴포넌트  
+- `/components` : 공통 UI 컴포넌트  
+- `/lib` : API 호출 및 크롤링 로직  
+- `/public` : 정적 파일 (이미지, 폰트 등)  
+- `/styles` : 글로벌 및 Tailwind CSS 커스텀 스타일  
+
+---
+
+## 설치 및 실행 방법
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+주의사항
+공지사항 및 이벤트 크롤링은 비공식 방식으로 구현되어 있으며, 공식 API가 없는 관계로 사이트 구조 변경 시 크롤링 기능이 영향을 받을 수 있습니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+게시판은 비회원 글쓰기 기능이 있으므로, CAPTCHA 적용을 통해 스팸 방지를 강화하고 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+유튜브 API 사용 시 쿼터 제한에 유의해주세요.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+라이선스
+본 프로젝트는 개인 및 길드원 정보 공유를 위한 비영리 목적으로 제작되었습니다.
+사용된 이미지 및 콘텐츠는 각 권리자에 귀속됩니다.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+제작자
+ZZIZZPARK (https://github.com/zzizzpark)
