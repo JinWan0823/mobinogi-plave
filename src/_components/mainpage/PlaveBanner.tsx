@@ -1,10 +1,13 @@
 "use client";
 
 import { useHorizontalScroll } from "@/_hooks/useHorizontalScroll";
+import useYoutube from "@/_hooks/useYoutube";
 import Image from "next/image";
+import YoutubeCard from "../Youtube/YoutubeCard";
 
 export default function PlaveBanner() {
   const listWrapperRef = useHorizontalScroll();
+  const { videos } = useYoutube();
   return (
     <section
       className="bg-cover bg-center relative py-28"
@@ -34,11 +37,8 @@ export default function PlaveBanner() {
           className="scrollbar-none overflow-x-auto gap-4 flex mt-6 px-10"
           ref={listWrapperRef}
         >
-          {[1, 2, 3, 4, 5].map((_, i) => (
-            <li
-              key={i}
-              className="w-[464px] h-[260px] bg-[#aaaaaa] rounded-[20px] flex-shrink-0 snap-start"
-            ></li>
+          {videos.map((item, i) => (
+            <YoutubeCard item={item} key={i} />
           ))}
         </ul>
       </div>

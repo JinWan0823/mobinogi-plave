@@ -1,6 +1,6 @@
 "use client";
 import { mobinogiClasses } from "@/_data/mobinogiClasses";
-import ClassBtn from "../YoutubeSection/ClassBtn";
+import ClassBtn from "../Youtube/ClassBtn";
 import { useState } from "react";
 
 export default function YoutubeSection() {
