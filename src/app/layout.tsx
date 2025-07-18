@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Jua } from "next/font/google";
 import Header from "@/_components/common/Header";
+import Footer from "@/_components/common/Footer";
 
 const jua = Jua({
   weight: "400",
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
