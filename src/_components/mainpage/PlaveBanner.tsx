@@ -3,7 +3,7 @@
 import { useHorizontalScroll } from "@/_hooks/useHorizontalScroll";
 import useYoutube from "@/_hooks/useYoutube";
 import Image from "next/image";
-import YoutubeCard from "../Youtube/YoutubeCard";
+import YoutubeCard from "../plave/YoutubeCard";
 import LoadingSpinner from "../common/LoadingSpinner";
 
 export default function PlaveBanner() {
