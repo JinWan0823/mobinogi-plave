@@ -1,10 +1,11 @@
 "use client";
-import { mobinogiClasses } from "@/_data/mobinogiClasses";
 import ClassBtn from "../Youtube/ClassBtn";
 import { useState } from "react";
+import Youtube from "../Youtube/Youtube";
+import useGuide, { mobinogiClasses } from "@/_hooks/useGuide";
 
 export default function YoutubeSection() {
-  const [activeIdx, setActiveIdx] = useState(0);
+  const { videos, activeIdx, setActiveIdx } = useGuide();
 
   return (
     <section className="w-full py-40">
@@ -26,52 +27,9 @@ export default function YoutubeSection() {
           ))}
         </ul>
         <ul className="grid grid-cols-3 gap-4 mt-8">
-          <li className="w-[464px] h-[260px] bg-[#aaaaaa] rounded-[20px]">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/f6KUzIry8oM"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="rounded-[20px]"
-            />
-          </li>
-          <li className="w-[464px] h-[260px] bg-[#aaaaaa] rounded-[20px]">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/6pW7OS1FAxI"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="rounded-[20px]"
-            />
-          </li>
-          <li className="w-[464px] h-[260px] bg-[#aaaaaa] rounded-[20px]">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/1kQT1fdncVM&t=1820s"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="rounded-[20px]"
-            />
-          </li>
-          <li className="w-[464px] h-[260px] bg-[#aaaaaa] rounded-[20px]">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/7lvi7-1uyyc&t=154s"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="rounded-[20px]"
-            />
-          </li>
-          <li className="w-[464px] h-[260px] bg-[#aaaaaa] rounded-[20px]"></li>
-          <li className="w-[464px] h-[260px] bg-[#aaaaaa] rounded-[20px]"></li>
+          {videos.map((item, idx) => (
+            <Youtube key={idx} item={item} />
+          ))}
         </ul>
       </div>
     </section>

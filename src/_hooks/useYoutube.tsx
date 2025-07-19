@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function useYoutube() {
   const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchVideos = async () => {
     try {
@@ -10,6 +11,7 @@ export default function useYoutube() {
       const data = await res.json();
       console.log(data);
       setVideos(data);
+      setLoading(true);
     } catch (err) {
       console.error("서버 에러", err);
     }
@@ -21,5 +23,6 @@ export default function useYoutube() {
 
   return {
     videos,
+    loading,
   };
 }
