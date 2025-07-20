@@ -9,6 +9,13 @@ export async function GET(
   const db = client.db("mobinogi");
   const { category } = await params;
 
+  if (!category) {
+    return NextResponse.json(
+      { message: "잘못된 요청입니다. category가 필요합니다." },
+      { status: 400 }
+    );
+  }
+
   try {
     const videos = await db
       .collection("youtubeGuide")
