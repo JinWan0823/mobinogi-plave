@@ -31,6 +31,7 @@ export default function useGuide() {
   const category = encodeURIComponent(mobinogiClasses[activeIdx]);
 
   const fetchVideos = async () => {
+    setLoading(true);
     try {
       const res = await fetch(`/api/guide/${category}`);
       console.log(category);
@@ -41,6 +42,8 @@ export default function useGuide() {
       setLoading(true);
     } catch (err) {
       console.error("서버 에러", err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -48,5 +51,5 @@ export default function useGuide() {
     fetchVideos();
   }, [activeIdx]);
 
-  return { videos, setActiveIdx, activeIdx };
+  return { videos, setActiveIdx, activeIdx, loading };
 }
