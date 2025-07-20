@@ -1,8 +1,7 @@
 "use client";
 import ClassBtn from "../Youtube/ClassBtn";
-import { useState } from "react";
-import Youtube from "../Youtube/Youtube";
 import useGuide, { mobinogiClasses } from "@/_hooks/useGuide";
+import GuideCard from "../Youtube/GuideCard";
 
 export default function YoutubeSection() {
   const { videos, activeIdx, setActiveIdx } = useGuide();
@@ -28,7 +27,7 @@ export default function YoutubeSection() {
         </ul>
         <ul className="grid grid-cols-3 gap-4 mt-8">
           {videos.map((item, idx) => (
-            <Youtube key={idx} item={item} />
+            <GuideCard key={idx} item={item} />
           ))}
         </ul>
       </div>
