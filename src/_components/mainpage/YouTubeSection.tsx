@@ -18,7 +18,7 @@ export default function YoutubeSection() {
         "
         >
           <p className="text-3xl font-bold">클래스별 유튜브 가이드</p>
-          <ManagerBtn />
+          <ManagerBtn link="/guide/list" />
         </div>
         <ul className="flex flex-wrap items-center mt-4 mb-8 gap-2">
           {mobinogiClasses.map((item, idx) => (

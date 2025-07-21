@@ -16,8 +16,10 @@ export default function SideBarList({
   return (
     <li>
       <Link
-        href="/guide/list"
-        className={`flex items-center ${link === pathname ? "text-point" : ""}`}
+        href={link}
+        className={`flex items-center mt-2 ${
+          link === pathname ? "text-point" : ""
+        }`}
       >
         <BiSolidRightArrow className="text-sm mr-1" />
         {title}

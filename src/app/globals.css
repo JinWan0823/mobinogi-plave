@@ -118,3 +118,7 @@ h3,
 .spinner {
   animation: spin 1s ease-in-out infinite;
 }
+
+.sidebar {
+  box-shadow: 2px 0px 3px 0px #e1e1e1;
+}
