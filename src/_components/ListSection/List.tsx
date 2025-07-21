@@ -1,8 +1,35 @@
+"use client";
+
 import Link from "next/link";
 import NoticeList from "./NoticeLi";
 import { TbArrowBigRightLinesFilled } from "react-icons/tb";
+import { useEffect, useState } from "react";
+
+export interface NoticeItem {
+  title: string;
+  date: string;
+  category: string;
+  link: string;
+}
 
 export default function List() {
+  const [list, setList] = useState<NoticeItem[]>([]);
+  const fetchData = async () => {
+    try {
+      const res = await fetch(`/api/notice`);
+      if (!res.ok) throw new Error("서버 응답 실패");
+      const data = await res.json();
+      console.log(data);
+      setList(data);
+    } catch (err) {
+      console.error("서버 에러", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <>
       <div className="w-[48%]">
@@ -13,10 +40,9 @@ export default function List() {
           </Link>
         </div>
         <ul className="border-t-4 border-[#000]">
-          <NoticeList />
-          <NoticeList />
-          <NoticeList />
-          <NoticeList />
+          {list.map((item, idx) => (
+            <NoticeList item={item} key={idx} />
+          ))}
         </ul>
       </div>
     </>
