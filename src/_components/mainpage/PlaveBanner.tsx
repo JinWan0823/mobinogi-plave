@@ -3,11 +3,12 @@
 import { useHorizontalScroll } from "@/_hooks/useHorizontalScroll";
 import useYoutube from "@/_hooks/useYoutube";
 import Image from "next/image";
-import YoutubeCard from "../Youtube/YoutubeCard";
+import YoutubeCard from "../plave/YoutubeCard";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 export default function PlaveBanner() {
   const listWrapperRef = useHorizontalScroll();
-  const { videos } = useYoutube();
+  const { videos, loading } = useYoutube();
   return (
     <section
       className="bg-cover bg-center relative py-28"
@@ -41,6 +42,7 @@ export default function PlaveBanner() {
             <YoutubeCard item={item} key={i} />
           ))}
         </ul>
+        {!loading && <LoadingSpinner />}
       </div>
     </section>
   );
