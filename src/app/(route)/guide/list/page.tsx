@@ -5,10 +5,15 @@ import useYoutubeManager from "@/_hooks/useYoutubeManager";
 import { GrPowerReset } from "react-icons/gr";
 
 export default function GuideListPage() {
-  const change = () => {};
-
-  const { allVideos, selectedClasses, setSelectedClasses } =
-    useYoutubeManager();
+  const {
+    allVideos,
+    selectedClasses,
+    setSelectedClasses,
+    checkedAll,
+    handleCheckAll,
+    checkedItems,
+    handleCheckItem,
+  } = useYoutubeManager();
 
   return (
     <section className="w-[1240px] mx-auto p-6 pt-[100px]">
@@ -26,7 +31,7 @@ export default function GuideListPage() {
             className="px-2 text-sm
             flex items-center gap-2
             bg-[#eee] rounded-lg"
-            onClick={() => setSelectedClasses("전체")}
+            onClick={() => setSelectedClasses("꿀팁")}
           >
             초기화 <GrPowerReset />
           </button>
@@ -37,8 +42,11 @@ export default function GuideListPage() {
           <thead className="bg-gray-100 text-gray-700 border-b-1 border-gray-300">
             <tr>
               <th className="px-4 py-3 w-10">
-                <input type="checkbox" onChange={change} />
-                {/* 전체 선택은 나중에 */}
+                <input
+                  type="checkbox"
+                  checked={checkedAll}
+                  onChange={handleCheckAll}
+                />
               </th>
               <th className="px-4 py-3">썸네일</th>
               <th className="px-4 py-3">제목</th>
@@ -49,7 +57,13 @@ export default function GuideListPage() {
           </thead>
           <tbody>
             {allVideos.map((item, idx) => (
-              <YoutubeList key={idx} item={item} />
+              <YoutubeList
+                key={idx}
+                item={item}
+                idx={idx}
+                checked={checkedItems[idx]}
+                handleCheckItem={handleCheckItem}
+              />
             ))}
           </tbody>
         </table>
