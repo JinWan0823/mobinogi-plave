@@ -62,7 +62,7 @@ export default function GuideListPage() {
               <th className="px-4 py-3">제목</th>
               <th className="px-4 py-3">카테고리</th>
               <th className="px-4 py-3">등록일</th>
-              <th className="px-4 py-3 text-right">상태</th>
+              <th className="px-4 py-3">상태</th>
             </tr>
           </thead>
           <tbody>
