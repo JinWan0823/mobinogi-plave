@@ -98,3 +98,28 @@ export async function DELETE(req: NextRequest) {
     );
   }
 }
+
+export async function PATCH(req: NextRequest) {
+  const { _id, notice }: { _id: string; notice: boolean } = await req.json();
+
+  try {
+    const client = await connectDB;
+    const db = client.db("mobinogi");
+
+    const result = await db
+      .collection("youtubeGuide")
+      .updateOne({ _id: new ObjectId(_id) }, { $set: { noticeChk: notice } });
+    if (result.matchedCount === 0) {
+      return NextResponse.json(
+        { error: "업데이트할 항목을 찾을 수 없습니다." },
+        { status: 404 }
+      );
+    }
+    return NextResponse.json({ message: "업데이트 성공" }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { message: "서버 에러 발생", error: String(error) },
+      { status: 500 }
+    );
+  }
+}

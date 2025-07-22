@@ -1,5 +1,6 @@
+import { convertToKstTime } from "@/_lib/convertToKstTime";
 import Image from "next/image";
-import { BsFillMegaphoneFill } from "react-icons/bs";
+import NoticeToggleBtn from "./NoticeToggleBtn";
 
 export interface ListProps {
   _id: string;
@@ -7,7 +8,7 @@ export interface ListProps {
   category: string;
   youtubeLink: string;
   createdAt: string;
-  notice: boolean;
+  noticeChk: boolean;
 }
 
 interface YoutubeListProps {
@@ -32,18 +33,6 @@ export default function YoutubeList({
   checked,
   handleCheckItem,
 }: YoutubeListProps) {
-  const youtubeId = getYoutubeId(item.youtubeLink);
-
-  const utcDate = new Date(item.createdAt);
-  const kstDate = new Date(utcDate.getTime() + 9 * 60 * 60 * 1000);
-
-  const formattedKstDate = kstDate.toLocaleString("ko-KR", {
-    timeZone: "Asia/Seoul",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  });
-
   return (
     <tr className="hover:bg-gray-300 border-b-1 border-gray-300">
       <td className="px-4 py-3 w-10">
@@ -55,7 +44,9 @@ export default function YoutubeList({
       </td>
       <td className="px-4 py-3 w-[140px]">
         <Image
-          src={`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`}
+          src={`https://img.youtube.com/vi/${getYoutubeId(
+            item.youtubeLink
+          )}/hqdefault.jpg`}
           alt="썸네일"
           width={120}
           height={40}
@@ -66,19 +57,11 @@ export default function YoutubeList({
         <div className="whitespace-normal leading-snug">{item.title}</div>
       </td>
       <td className="px-4 py-3 w-[140px] text-gray-600">{item.category}</td>
-      <td className="px-4 py-3 w-[120px]">{formattedKstDate}</td>
-      <td className="px-4 py-3 w-[100px] text-right">
-        {item.notice ? (
-          <span className="text-green-600 font-semibold flex justify-end items-center gap-1">
-            <BsFillMegaphoneFill />
-            고정
-          </span>
-        ) : (
-          <span className="text-green-600 font-semibold flex justify-end items-center gap-1">
-            <BsFillMegaphoneFill />
-            고정
-          </span>
-        )}
+      <td className="px-4 py-3 w-[120px]">
+        {convertToKstTime(item.createdAt)}
+      </td>
+      <td className="px-4 py-3 w-[120px] text-sm text-white">
+        <NoticeToggleBtn noticeBoolean={item.noticeChk} listId={item._id} />
       </td>
     </tr>
   );
