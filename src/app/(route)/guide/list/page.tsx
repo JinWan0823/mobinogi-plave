@@ -1,15 +1,37 @@
 "use client";
+import CategoryOpt from "@/_components/manager/CategoryOpt";
 import YoutubeList from "@/_components/manager/YoutubeList";
 import useYoutubeManager from "@/_hooks/useYoutubeManager";
+import { GrPowerReset } from "react-icons/gr";
 
 export default function GuideListPage() {
   const change = () => {};
 
-  const { allVideos } = useYoutubeManager();
+  const { allVideos, selectedClasses, setSelectedClasses } =
+    useYoutubeManager();
 
   return (
     <section className="w-[1240px] mx-auto p-6 pt-[100px]">
-      <p className="text-3xl font-bold">유튜브 동영상 목록</p>
+      <div className="flex items-center justify-between">
+        <p className="text-3xl font-bold">유튜브 동영상 목록</p>
+        <div className="flex gap-2">
+          <div className="w-[200px]">
+            <CategoryOpt
+              selectedClasses={selectedClasses}
+              setSelectedClasses={setSelectedClasses}
+            />
+          </div>
+          <button
+            type="button"
+            className="px-2 text-sm
+            flex items-center gap-2
+            bg-[#eee] rounded-lg"
+            onClick={() => setSelectedClasses("전체")}
+          >
+            초기화 <GrPowerReset />
+          </button>
+        </div>
+      </div>
       <div className="overflow-hidden rounded-xl shadow-xl border-1 border-[#dfdfdf] mt-4">
         <table className="w-full text-sm text-left">
           <thead className="bg-gray-100 text-gray-700 border-b-1 border-gray-300">
