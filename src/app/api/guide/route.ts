@@ -1,5 +1,5 @@
 import { connectDB } from "@/_lib/mongodb";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
   const client = await connectDB;
@@ -16,6 +16,42 @@ export async function GET() {
     }
 
     return NextResponse.json(videos, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { message: "서버 에러 발생", error: String(error) },
+      { status: 500 }
+    );
+  }
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    const data = await req.json();
+    const { title, youtubeLink, category, noticeChk } = data;
+
+    if (!title || !youtubeLink || !category) {
+      return NextResponse.json(
+        { message: "필수 입력란을 확인해주세요." },
+        { status: 400 }
+      );
+    }
+
+    const client = await connectDB;
+    const db = client.db("mobinogi");
+
+    const newGuide = {
+      title,
+      youtubeLink,
+      category,
+      noticeChk,
+      createdAt: new Date(),
+    };
+    const result = await db.collection("youtubeGuide").insertOne(newGuide);
+
+    return NextResponse.json(
+      { message: "유튜브 영상 등록 성공", result },
+      { status: 200 }
+    );
   } catch (error) {
     return NextResponse.json(
       { message: "서버 에러 발생", error: String(error) },
