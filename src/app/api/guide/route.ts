@@ -1,12 +1,21 @@
 import { connectDB } from "@/_lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   const client = await connectDB;
   const db = client.db("mobinogi");
 
+  const url = new URL(req.url);
+  const category = url.searchParams.get("category");
+
   try {
-    const videos = await db.collection("youtubeGuide").find().toArray();
+    let videos;
+
+    if (category && category !== "전체") {
+      videos = await db.collection("youtubeGuide").find({ category }).toArray();
+    } else {
+      videos = await db.collection("youtubeGuide").find().toArray();
+    }
 
     if (!videos) {
       return NextResponse.json(

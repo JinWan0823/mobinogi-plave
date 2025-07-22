@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 export default function useYoutubeManager() {
   const [allVideos, setAllVideos] = useState([]);
+  const [selectedClasses, setSelectedClasses] = useState("전체");
 
   const fetchData = async () => {
     try {
-      const res = await fetch("/api/guide");
+      const res = await fetch(`/api/guide?category=${selectedClasses}`);
       if (!res.ok) throw new Error("서버 응답 실패");
       const data = await res.json();
       setAllVideos(data);
@@ -16,6 +17,6 @@ export default function useYoutubeManager() {
 
   useEffect(() => {
     fetchData();
-  }, []);
-  return { allVideos };
+  }, [selectedClasses]);
+  return { allVideos, selectedClasses, setSelectedClasses };
 }
