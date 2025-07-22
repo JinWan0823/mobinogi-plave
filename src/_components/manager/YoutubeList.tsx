@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 
-interface ListProps {
+export interface ListProps {
   _id: string;
   title: string;
   category: string;
@@ -11,6 +11,9 @@ interface ListProps {
 
 interface YoutubeListProps {
   item: ListProps;
+  idx: number;
+  checked: boolean;
+  handleCheckItem: (index: number, id: string) => void;
 }
 
 const getYoutubeId = (url: string): string | null => {
@@ -22,7 +25,12 @@ const getYoutubeId = (url: string): string | null => {
   }
 };
 
-export default function YoutubeList({ item }: YoutubeListProps) {
+export default function YoutubeList({
+  item,
+  idx,
+  checked,
+  handleCheckItem,
+}: YoutubeListProps) {
   const youtubeId = getYoutubeId(item.youtubeLink);
 
   const utcDate = new Date(item.createdAt);
@@ -38,7 +46,11 @@ export default function YoutubeList({ item }: YoutubeListProps) {
   return (
     <tr className="hover:bg-gray-300 border-b-1 border-gray-300">
       <td className="px-4 py-3 w-10">
-        <input type="checkbox" />
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={() => handleCheckItem(idx, item._id)}
+        />
       </td>
       <td className="px-4 py-3 w-[140px]">
         <Image
