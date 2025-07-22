@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaCheckCircle } from "react-icons/fa";
+import { BsFillMegaphoneFill } from "react-icons/bs";
 
 export interface ListProps {
   _id: string;
@@ -7,6 +7,7 @@ export interface ListProps {
   category: string;
   youtubeLink: string;
   createdAt: string;
+  notice: boolean;
 }
 
 interface YoutubeListProps {
@@ -67,10 +68,17 @@ export default function YoutubeList({
       <td className="px-4 py-3 w-[140px] text-gray-600">{item.category}</td>
       <td className="px-4 py-3 w-[120px]">{formattedKstDate}</td>
       <td className="px-4 py-3 w-[100px] text-right">
-        <span className="text-green-600 font-semibold flex justify-end items-center gap-1">
-          <FaCheckCircle />
-          공개중
-        </span>
+        {item.notice ? (
+          <span className="text-green-600 font-semibold flex justify-end items-center gap-1">
+            <BsFillMegaphoneFill />
+            고정
+          </span>
+        ) : (
+          <span className="text-green-600 font-semibold flex justify-end items-center gap-1">
+            <BsFillMegaphoneFill />
+            고정
+          </span>
+        )}
       </td>
     </tr>
   );

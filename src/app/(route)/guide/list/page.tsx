@@ -3,6 +3,7 @@ import CategoryOpt from "@/_components/manager/CategoryOpt";
 import YoutubeList from "@/_components/manager/YoutubeList";
 import useYoutubeManager from "@/_hooks/useYoutubeManager";
 import { GrPowerReset } from "react-icons/gr";
+import { MdDelete } from "react-icons/md";
 
 export default function GuideListPage() {
   const {
@@ -13,13 +14,13 @@ export default function GuideListPage() {
     handleCheckAll,
     checkedItems,
     handleCheckItem,
+    handleDeleteList,
   } = useYoutubeManager();
-
   return (
     <section className="w-[1240px] mx-auto p-6 pt-[100px]">
       <div className="flex items-center justify-between">
         <p className="text-3xl font-bold">유튜브 동영상 목록</p>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <div className="w-[200px]">
             <CategoryOpt
               selectedClasses={selectedClasses}
@@ -28,12 +29,21 @@ export default function GuideListPage() {
           </div>
           <button
             type="button"
-            className="px-2 text-sm
+            className="p-2 text-sm
             flex items-center gap-2
             bg-[#eee] rounded-lg"
             onClick={() => setSelectedClasses("꿀팁")}
           >
             초기화 <GrPowerReset />
+          </button>
+          <button
+            type="button"
+            className="p-2 text-sm text-white
+            flex items-center gap-2
+            bg-red-400 rounded-lg"
+            onClick={handleDeleteList}
+          >
+            삭제 <MdDelete />
           </button>
         </div>
       </div>

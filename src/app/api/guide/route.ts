@@ -1,4 +1,5 @@
 import { connectDB } from "@/_lib/mongodb";
+import { ObjectId } from "mongodb";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
@@ -59,6 +60,35 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(
       { message: "유튜브 영상 등록 성공", result },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: "서버 에러 발생", error: String(error) },
+      { status: 500 }
+    );
+  }
+}
+
+export async function DELETE(req: NextRequest) {
+  const { ids }: { ids: string[] } = await req.json();
+
+  if (!ids || ids.length === 0) {
+    return NextResponse.json(
+      { message: "삭제할 항목이 없습니다." },
+      { status: 400 }
+    );
+  }
+
+  try {
+    const client = await connectDB;
+    const db = client.db("mobinogi");
+
+    const result = await db.collection("youtubeGuide").deleteMany({
+      _id: { $in: ids.map((id) => new ObjectId(id)) },
+    });
+    return NextResponse.json(
+      { message: "삭제 완료", deletedCount: result.deletedCount },
       { status: 200 }
     );
   } catch (error) {

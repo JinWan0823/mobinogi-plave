@@ -47,6 +47,32 @@ export default function useYoutubeManager() {
     }
   };
 
+  const handleDeleteList = async () => {
+    const del = confirm("선택한 영상을 삭제하시겠습니까?");
+    if (!del) return;
+
+    if (selectedIds.length === 0) {
+      alert("선택된 항목이 없습니다.");
+      return;
+    }
+
+    try {
+      const res = await fetch(`/api/guide`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ids: selectedIds }),
+      });
+      if (!res.ok) throw new Error("서버 응답 실패");
+
+      alert("삭제를 완료했습니다.");
+      setSelectedClasses("꿀팁");
+    } catch (error) {
+      console.error("유튜브 리스트 삭제 실패", error);
+    }
+  };
+
   useEffect(() => {
     fetchData();
   }, [selectedClasses]);
@@ -60,5 +86,6 @@ export default function useYoutubeManager() {
     handleCheckAll,
     checkedItems,
     handleCheckItem,
+    handleDeleteList,
   };
 }
