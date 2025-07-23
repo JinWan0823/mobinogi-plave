@@ -32,12 +32,21 @@
     format("woff2");
 }
 
+@font-face {
+  font-family: "Press Start 2P";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/s/pressstart2p/v11/e3t4euO8T-267oIAQAu6jDQyK4.woff2")
+    format("woff2");
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 
   --font-pretendard: "Pretendard", sans-serif;
   --font-jua: "Jua", sans-serif;
+  --font-Press: "Press Start 2P", sans-serif;
 
   --color-point: #ff69b4;
   --color-main: #b388ff;
@@ -59,6 +68,10 @@ h2,
 h3,
 .title {
   font-family: var(--font-jua);
+}
+
+.weekly-planner {
+  font-family: var(--font-Press);
 }
 
 .bg-main {

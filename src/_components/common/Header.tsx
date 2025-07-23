@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Btn from "./Btn";
 
 export default function Header() {
@@ -9,9 +10,11 @@ export default function Header() {
       z-9999
       "
     >
-      <h1 draggable="false" className="text-white text-3xl">
-        MOBINOGI - PLAVE
-      </h1>
+      <Link href={"/"}>
+        <h1 draggable="false" className="text-white text-3xl">
+          MOBINOGI - PLAVE
+        </h1>
+      </Link>
       <Btn title="Login" size="xl" />
     </header>
   );
