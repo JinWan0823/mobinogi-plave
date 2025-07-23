@@ -1,3 +1,4 @@
+import WeeklyPlanner from "@/_components/common/WeeklyPlanner";
 import LinkSection from "@/_components/mainpage/LinkSection";
 import ListSection from "@/_components/mainpage/ListSection";
 import MainBanner from "@/_components/mainpage/MainBanner";
@@ -12,6 +13,7 @@ export default function Home() {
       <LinkSection />
       <YoutubeSection />
       <PlaveBanner />
+      <WeeklyPlanner />
     </>
   );
 }

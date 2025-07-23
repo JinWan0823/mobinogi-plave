@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Jua } from "next/font/google";
+import { Jua, Press_Start_2P } from "next/font/google";
+
 import Header from "@/_components/common/Header";
 import Footer from "@/_components/common/Footer";
 
@@ -8,6 +9,12 @@ const jua = Jua({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-jua",
+});
+
+const press = Press_Start_2P({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-Press",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${jua.variable}`}>
+    <html lang="ko">
       <body>
         <Header />
         {children}

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsFillMegaphoneFill } from "react-icons/bs";
 
 export default function NoticeToggleBtn({
@@ -9,7 +9,7 @@ export default function NoticeToggleBtn({
   noticeBoolean: boolean;
   listId: string;
 }) {
-  const [notice, setNotice] = useState<boolean>(noticeBoolean);
+  const [notice, setNotice] = useState(noticeBoolean);
 
   const handleUpdateNotice = async () => {
     try {
@@ -24,7 +24,6 @@ export default function NoticeToggleBtn({
         }),
       });
       if (!res.ok) throw new Error("서버 응답 실패");
-      setNotice((prev) => !prev);
     } catch (error) {
       console.error("유튜브 리스트 수정 실패", error);
     }
