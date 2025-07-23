@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
     "cheerio": "^1.1.2",
     "framer-motion": "^12.23.6",
     "mongodb": "^6.17.0",
