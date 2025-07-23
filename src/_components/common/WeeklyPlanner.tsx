@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import WeeklyList from "./WeeklyList";
 import WeeklyDate from "./WeeklyDate";
+import { IoMdClose } from "react-icons/io";
 
 const weeklyPlan = [
   "어비스 3종 클리어",
@@ -16,6 +17,7 @@ const weeklyPlan = [
 export default function WeeklyPlanner() {
   const [notes, setNotes] = useState("");
   const [checkedList, setCheckedList] = useState<boolean[]>([]);
+  const [noneWeekly, setNoneWeekly] = useState(true);
 
   useEffect(() => {
     const memo = localStorage.getItem("notes");
@@ -44,41 +46,80 @@ export default function WeeklyPlanner() {
     localStorage.setItem("checkedList", JSON.stringify(newList));
   };
 
-  return (
-    <div
-      className="
-      p-4 w-[400px]
-      fixed top-1/2 left-[40px] -translate-y-1/2
-      bg-center bg-cover
-      z-9999 shadow-xl
-      "
-      style={{ backgroundImage: `url(/main/paper2.jpg)` }}
-    >
-      <div
-        className="w-full p-4
-        border-1"
+  useEffect(() => {
+    const stored = localStorage.getItem("limitTime");
+
+    if (!stored) {
+      setNoneWeekly(true);
+      return;
+    }
+    const limitTime = new Date(stored);
+    if (isNaN(limitTime.getTime())) {
+      setNoneWeekly(true);
+      return;
+    }
+
+    const isExpired = new Date() > limitTime;
+
+    if (isExpired) {
+      setNoneWeekly(true);
+      localStorage.removeItem("limitTime");
+    } else {
+      setNoneWeekly(false);
+    }
+  }, []);
+
+  const handleClosePlanner = () => {
+    const now = new Date();
+    const after24h = new Date(now.getTime() + 1000 * 60 * 60 * 24);
+
+    localStorage.setItem("limitTime", after24h.toISOString());
+    setNoneWeekly(false);
+  };
+
+  return !noneWeekly ? null : (
+    <div className="fixed top-1/2 left-[40px] -translate-y-1/2 z-9999">
+      <button
+        type="button"
+        onClick={handleClosePlanner}
+        className="px-1 mb-1 text-sm flex items-center border-b-1 bg-[#dfdfdf] rounded"
       >
-        <h2 className="weekly-planner text-xl text-center">WEEKLY PLANNER</h2>
-        <WeeklyDate />
-        <ul>
-          {weeklyPlan.map((item, idx) => (
-            <WeeklyList
-              title={item}
-              key={idx}
-              idx={idx}
-              checked={checkedList[idx] || false}
-              toggleChecked={toggleChecked}
-            />
-          ))}
-        </ul>
-        <textarea
-          placeholder="NOTES"
-          className="w-full h-[90px] mt-4 p-1 px-2 
+        <IoMdClose /> 24시간동안 보지않기
+      </button>
+      <div
+        className="
+        p-4 w-[400px]
+        bg-center bg-cover
+        shadow-xl
+        "
+        style={{ backgroundImage: `url(/main/paper2.jpg)` }}
+      >
+        <div
+          className="w-full p-4
+        border-1"
+        >
+          <h2 className="weekly-planner text-xl text-center">WEEKLY PLANNER</h2>
+          <WeeklyDate />
+          <ul>
+            {weeklyPlan.map((item, idx) => (
+              <WeeklyList
+                title={item}
+                key={idx}
+                idx={idx}
+                checked={checkedList[idx] || false}
+                toggleChecked={toggleChecked}
+              />
+            ))}
+          </ul>
+          <textarea
+            placeholder="NOTES"
+            className="w-full h-[90px] mt-4 p-1 px-2 
           border-1 border-[#333] rounded
           outline-[#333]"
-          value={notes}
-          onChange={handleNotes}
-        />
+            value={notes}
+            onChange={handleNotes}
+          />
+        </div>
       </div>
     </div>
   );
