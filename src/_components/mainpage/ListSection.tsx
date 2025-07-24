@@ -1,5 +1,6 @@
 import ArrowAnimation from "../common/ArrowAnimation";
 import List from "../ListSection/List";
+import MainBoardList from "../ListSection/MainBoardList";
 
 export default function ListSection() {
   return (
@@ -8,7 +9,7 @@ export default function ListSection() {
 
       <div className="inner flex items-start justify-between gap-2">
         <List />
-        <List />
+        <MainBoardList />
       </div>
     </section>
   );
