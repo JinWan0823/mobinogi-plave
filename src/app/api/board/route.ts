@@ -32,7 +32,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();
-    const { title, category, name, password } = data;
+    const { title, category, name, password, content } = data;
 
     if (!title || !name || !password) {
       return NextResponse.json(
@@ -48,9 +48,10 @@ export async function POST(req: NextRequest) {
 
     const newBoard = {
       title,
-      cateogry: category ?? "자유게시글",
+      category: category ?? "자유게시글",
       name,
       password: hashedPassword,
+      content: content,
       createdAt: new Date(),
     };
     const result = await db.collection("board").insertOne(newBoard);
