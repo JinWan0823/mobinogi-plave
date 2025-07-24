@@ -1,10 +1,11 @@
+import SubBanner from "@/_components/board/SubBanner";
 import TabMenu from "@/_components/board/TabMenu";
 import WriteForm from "@/_components/board/WriteForm";
 
 export default function BoardWritePage() {
   return (
     <>
-      <div className="banner w-full h-[380px] bg-[#333]"></div>
+      <SubBanner />
       <div
         className="menu-tab w-full
             bg-[#fff] shadow-xl"
