@@ -52,7 +52,7 @@ export default function WriteForm() {
     <form
       onSubmit={handleSubmitBoard}
       className="w-full h-full p-4 mx-auto
-            border-1 border-[#333]"
+            border-2 border-[#dfdfdf]"
     >
       <div className="mb-2 flex gap-2">
         <Input type="text" value={name} onChange={setName} />

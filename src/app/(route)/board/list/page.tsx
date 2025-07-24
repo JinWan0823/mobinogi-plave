@@ -1,6 +1,7 @@
 "use client";
 
 import BoardList from "@/_components/board/BoardList";
+import SubBanner from "@/_components/board/SubBanner";
 import TabMenu from "@/_components/board/TabMenu";
 import useBoardList from "@/_hooks/useBoardList";
 
@@ -8,10 +9,10 @@ export default function BoardListPage() {
   const { boardList } = useBoardList();
   return (
     <div>
-      <div className="banner w-full h-[380px] bg-[#333]"></div>
+      <SubBanner />
       <div
         className="menu-tab w-full
-        bg-[#fff] shadow-lg"
+        bg-[#fff] shadow-xl"
       >
         <TabMenu />
       </div>
