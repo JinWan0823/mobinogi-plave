@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FaChevronDown, FaHome } from "react-icons/fa";
 import { TiChevronRightOutline } from "react-icons/ti";
@@ -8,9 +9,13 @@ import { TiChevronRightOutline } from "react-icons/ti";
 export default function TabMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const pathName = usePathname();
+
   const toggleTabMenu = () => {
     setIsOpen((prev) => !prev);
   };
+
+  const isListPage = pathName === "/board/list";
 
   return (
     <ul className="mx-auto w-[1140px] flex items-center font-bold">
@@ -27,7 +32,15 @@ export default function TabMenu() {
         cursor-pointer"
         onClick={toggleTabMenu}
       >
-        글 목록 <FaChevronDown className="text-point" />
+        {isListPage ? (
+          <>
+            글 목록 <FaChevronDown className="text-point" />
+          </>
+        ) : (
+          <>
+            글 작성 <FaChevronDown className="text-point" />
+          </>
+        )}
         {isOpen && (
           <ul
             className="absolute bottom-[-4px] left-0 translate-y-full
