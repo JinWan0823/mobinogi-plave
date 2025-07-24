@@ -15,7 +15,7 @@ export default function Input({ type, value, onChange }: InputProps) {
       </label>
       <input
         type={type}
-        className="w-[240px] p-1 px-2 border-[#dfdfdf] border-1 rounded-lg"
+        className="w-[240px] p-1 px-2 bg-[#fff] border-[#dfdfdf] border-1 rounded-lg"
         value={value}
         onChange={(e) => onChange(e.target.value)}
         // placeholder={type === "text" ? "닉네임" : "비밀번호"}

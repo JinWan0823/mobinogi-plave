@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
 
     const newBoard = {
       title,
-      cateogry: category ?? "자유게시글",
+      category: category ?? "자유게시글",
       name,
       password: hashedPassword,
       content: content,
