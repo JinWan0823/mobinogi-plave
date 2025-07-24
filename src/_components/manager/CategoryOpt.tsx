@@ -1,17 +1,19 @@
 "use client";
 
 import { mobinogiClasses } from "@/_hooks/useGuide";
-import { SetStateAction, useEffect, useState } from "react";
+import { SetStateAction, useState } from "react";
 import { FaSortDown } from "react-icons/fa";
 
 interface CategoryProps {
   selectedClasses: string;
   setSelectedClasses: React.Dispatch<SetStateAction<string>>;
+  categoryList?: string[];
 }
 
 export default function CategoryOpt({
   selectedClasses,
   setSelectedClasses,
+  categoryList,
 }: CategoryProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,16 +40,27 @@ export default function CategoryOpt({
           border border-[#dfdfdf] rounded-lg
           overflow-y-scroll z-10 "
         >
-          {mobinogiClasses.map((cls) => (
-            <li
-              key={cls}
-              className="px-[10px] py-2
+          {categoryList
+            ? categoryList.map((cls) => (
+                <li
+                  key={cls}
+                  className="px-[10px] py-2
               hover:bg-gray-100 cursor-pointer"
-              onClick={() => handleSelect(cls)}
-            >
-              {cls}
-            </li>
-          ))}
+                  onClick={() => handleSelect(cls)}
+                >
+                  {cls}
+                </li>
+              ))
+            : mobinogiClasses.map((cls) => (
+                <li
+                  key={cls}
+                  className="px-[10px] py-2
+              hover:bg-gray-100 cursor-pointer"
+                  onClick={() => handleSelect(cls)}
+                >
+                  {cls}
+                </li>
+              ))}
         </ul>
       )}
     </div>
