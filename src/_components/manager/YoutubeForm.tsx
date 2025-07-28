@@ -4,6 +4,7 @@ import CategoryOpt from "@/_components/manager/CategoryOpt";
 import { useState } from "react";
 import NoticeCheck from "./NoticeCheck";
 import { useRouter } from "next/navigation";
+import { useAlert } from "@/_context/AlertProvider";
 
 export default function YoutubeForm() {
   const [selectedClasses, setSelectedClasses] = useState("꿀팁");
@@ -12,6 +13,7 @@ export default function YoutubeForm() {
   const [noticeChk, setNoticeChk] = useState(false);
 
   const router = useRouter();
+  const { showAlert } = useAlert();
 
   const handleSumit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ export default function YoutubeForm() {
     };
 
     if (!data.title || !data.youtubeLink || !data.category) {
-      alert("필수 입력란을 확인해주세요.");
+      showAlert("필수 입력란을 확인해주세요.");
       return;
     }
 
@@ -38,7 +40,7 @@ export default function YoutubeForm() {
       });
 
       if (!res.ok) {
-        alert("필수 입력란을 확인해주세요.");
+        showAlert("필수 입력란을 확인해주세요.");
         return;
       }
       console.log(res.json());

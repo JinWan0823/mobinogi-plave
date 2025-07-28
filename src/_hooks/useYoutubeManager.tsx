@@ -1,4 +1,5 @@
 import { ListProps } from "@/_components/manager/YoutubeList";
+import { useAlert } from "@/_context/AlertProvider";
 import { useEffect, useState } from "react";
 
 export default function useYoutubeManager() {
@@ -9,6 +10,8 @@ export default function useYoutubeManager() {
     new Array(allVideos.length).fill(false)
   );
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
+
+  const { showAlert } = useAlert();
 
   const handleCheckAll = () => {
     setCheckedAll((prev) => !prev);
@@ -52,7 +55,7 @@ export default function useYoutubeManager() {
     if (!del) return;
 
     if (selectedIds.length === 0) {
-      alert("선택된 항목이 없습니다.");
+      showAlert("선택된 항목이 없습니다.");
       return;
     }
 
@@ -66,7 +69,7 @@ export default function useYoutubeManager() {
       });
       if (!res.ok) throw new Error("서버 응답 실패");
 
-      alert("삭제를 완료했습니다.");
+      showAlert("삭제를 완료했습니다.");
       setSelectedClasses("꿀팁");
     } catch (error) {
       console.error("유튜브 리스트 삭제 실패", error);
