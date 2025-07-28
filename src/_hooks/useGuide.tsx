@@ -23,8 +23,17 @@ export const mobinogiClasses = [
   "듀얼블레이드",
 ];
 
+interface VideoItem {
+  title: string;
+  category: string;
+  youtubeLink: string;
+  _id: string;
+  createdAt: string;
+  noticeChk: boolean;
+}
+
 export default function useGuide() {
-  const [videos, setVideos] = useState([]);
+  const [videos, setVideos] = useState<VideoItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeIdx, setActiveIdx] = useState(0);
 
@@ -34,9 +43,19 @@ export default function useGuide() {
     try {
       const res = await fetch(`/api/guide/${category}`);
       if (!res.ok) throw new Error("서버 응답 실패");
-      const data = await res.json();
-      console.log(data);
-      setVideos(data);
+      const data: VideoItem[] = await res.json();
+      const sorted = data.sort((a, b) => {
+        if (a.noticeChk !== b.noticeChk) {
+          return Number(b.noticeChk) - Number(a.noticeChk);
+        }
+        return (
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
+      });
+
+      const limited = sorted.slice(0, 6);
+
+      setVideos(limited);
       setLoading(false);
     } catch (err) {
       console.error("서버 에러", err);
