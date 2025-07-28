@@ -3,10 +3,11 @@
 import BoardList from "@/_components/board/BoardList";
 import SubBanner from "@/_components/board/SubBanner";
 import TabMenu from "@/_components/board/TabMenu";
+import LoadingSpinner from "@/_components/common/LoadingSpinner";
 import useBoardList from "@/_hooks/useBoardList";
 
 export default function BoardListPage() {
-  const { boardList } = useBoardList();
+  const { boardList, loading } = useBoardList();
   return (
     <div>
       <SubBanner />
@@ -36,9 +37,11 @@ export default function BoardListPage() {
                 <span className="text-sm text-gray-600 w-[100px]">날짜</span>
               </div>
             </li>
-            {boardList.map((item, idx) => (
-              <BoardList key={idx} item={item} />
-            ))}
+            {!loading ? (
+              boardList.map((item, idx) => <BoardList key={idx} item={item} />)
+            ) : (
+              <LoadingSpinner />
+            )}
           </ul>
         </div>
       </section>
