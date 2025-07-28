@@ -13,24 +13,19 @@ export default function BoardViewPage() {
         <TabMenu />
       </div>
       <section className="py-12">
-        <div
-          className="w-[1140px] mx-auto mt-4
-          overflow-hidden rounded-md shadow-xl
-          border-l border-r border-b border-[#dfdfdf]
-          border-t-4 border-t-[#ff69b4]"
-        >
+        <div className="w-[1140px] mx-auto">
           <ViewWrap />
-        </div>
-        <div className="flex justify-center mt-8">
-          <Link
-            href="/board/list"
-            className="w-[160px] h-[44px]
+          <div className="flex justify-center mt-8">
+            <Link
+              href="/board/list"
+              className="w-[160px] h-[44px]
           flex items-center justify-center
           bg-point text-white font-bold text-lg
           rounded-xl shadow-xl"
-          >
-            목록으로
-          </Link>
+            >
+              목록으로
+            </Link>
+          </div>
         </div>
       </section>
     </>
