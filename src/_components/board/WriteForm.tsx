@@ -2,6 +2,7 @@
 
 import Input from "@/_components/board/Input";
 import CategoryOpt from "@/_components/manager/CategoryOpt";
+import { useAlert } from "@/_context/AlertProvider";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -14,6 +15,7 @@ export default function WriteForm() {
   const [content, setContent] = useState("");
 
   const router = useRouter();
+  const { showAlert } = useAlert();
 
   const handleSubmitBoard = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +27,7 @@ export default function WriteForm() {
       category: selectedClasses,
     };
     if (!data.title || !data.name || !data.password) {
-      alert("필수 입력란을 확인해주세요.");
+      showAlert("필수 입력란을 확인해주세요.");
       return;
     }
     try {
@@ -38,7 +40,7 @@ export default function WriteForm() {
       });
 
       if (!res.ok) {
-        alert("필수 입력란을 확인해주세요.");
+        showAlert("필수 입력란을 확인해주세요.");
         return;
       }
       console.log(res.json());

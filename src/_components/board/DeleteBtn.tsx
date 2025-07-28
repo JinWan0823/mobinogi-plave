@@ -1,5 +1,6 @@
 "use client";
 
+import { useAlert } from "@/_context/AlertProvider";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { MdDelete } from "react-icons/md";
@@ -8,6 +9,7 @@ export default function DeleteBtn({ name, id }: { name: string; id: string }) {
   const [openForm, setOpenForm] = useState(false);
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const { showAlert } = useAlert();
 
   const handleDeleteBtn = () => {
     setOpenForm(true);
@@ -31,13 +33,13 @@ export default function DeleteBtn({ name, id }: { name: string; id: string }) {
 
     if (!res.ok) {
       const errorData = await res.json();
-      alert(errorData.message);
+      showAlert(errorData.message);
       setPassword("");
       setOpenForm(false);
       return;
     }
 
-    alert("삭제를 완료했습니다.");
+    showAlert("삭제를 완료했습니다.");
     router.push("/board/list");
   };
 
