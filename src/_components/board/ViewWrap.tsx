@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import LoadingSpinner from "../common/LoadingSpinner";
 import { convertToKstTime } from "@/_lib/convertToKstTime";
+import DeleteBtn from "./DeleteBtn";
 
 interface BoardData {
   title: string;
@@ -31,48 +32,56 @@ export default function ViewWrap() {
 
   return (
     <>
-      {boardData ? (
-        <>
-          <div className="flex">
-            <div className="w-[50%] flex">
-              <h4 className="w-[120px] p-2 border-r-1 bg-gray-100 border-[#dfdfdf] text-center">
-                작성자
-              </h4>
-              <p className="p-2">{boardData.name}</p>
+      {boardData && <DeleteBtn name={boardData.name} id={boardData._id} />}
+      <div
+        className="w-full
+          overflow-hidden rounded-md shadow-xl
+          border-l border-r border-b border-[#dfdfdf]
+          border-t-4 border-t-[#ff69b4]"
+      >
+        {boardData ? (
+          <>
+            <div className="flex">
+              <div className="w-[50%] flex">
+                <h4 className="w-[120px] p-2 border-r-1 bg-gray-100 border-[#dfdfdf] text-center">
+                  작성자
+                </h4>
+                <p className="p-2">{boardData.name}</p>
+              </div>
+              <div className="w-[50%] flex">
+                <h4 className="w-[120px] p-2 border-l-1 border-r-1 bg-gray-100 border-[#dfdfdf] text-center">
+                  카테고리
+                </h4>
+                <p className="p-2">{boardData.category}</p>
+              </div>
             </div>
-            <div className="w-[50%] flex">
-              <h4 className="w-[120px] p-2 border-l-1 border-r-1 bg-gray-100 border-[#dfdfdf] text-center">
-                카테고리
-              </h4>
-              <p className="p-2">{boardData.category}</p>
-            </div>
-          </div>
-          <div className="flex border-t-1 border-[#dfdfdf]">
-            <h4 className="w-[120px] p-2 border-r-1 border-[#dfdfdf] bg-gray-100 text-center">
-              제목
-            </h4>
-            <p className="p-2">{boardData.title}</p>
-          </div>
-          <div className="flex border-t-1 border-[#dfdfdf]">
-            <div className="w-[50%] flex">
+            <div className="flex border-t-1 border-[#dfdfdf]">
               <h4 className="w-[120px] p-2 border-r-1 border-[#dfdfdf] bg-gray-100 text-center">
-                작성일
+                제목
               </h4>
-              <p className="p-2">{convertToKstTime(boardData.createdAt)}</p>
+              <p className="p-2">{boardData.title}</p>
             </div>
-          </div>
-          <div className="flex border-t-1 border-[#dfdfdf] w-full">
-            <h4 className="w-[120px] shrink-0 p-2 border-r-1 border-[#dfdfdf] bg-gray-100 text-center">
-              내용
-            </h4>
-            <div className="w-full min-h-[500px]">
-              <p className="p-2">{boardData.content}</p>
+            <div className="flex border-t-1 border-[#dfdfdf]">
+              <div className="w-[50%] flex">
+                <h4 className="w-[120px] p-2 border-r-1 border-[#dfdfdf] bg-gray-100 text-center">
+                  작성일
+                </h4>
+                <p className="p-2">{convertToKstTime(boardData.createdAt)}</p>
+              </div>
             </div>
-          </div>
-        </>
-      ) : (
-        <LoadingSpinner />
-      )}
+            <div className="flex border-t-1 border-[#dfdfdf] w-full">
+              <h4 className="w-[120px] shrink-0 p-2 border-r-1 border-[#dfdfdf] bg-gray-100 text-center">
+                내용
+              </h4>
+              <div className="w-full min-h-[500px]">
+                <p className="p-2">{boardData.content}</p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <LoadingSpinner />
+        )}
+      </div>
     </>
   );
 }
