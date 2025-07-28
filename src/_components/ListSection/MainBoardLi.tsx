@@ -17,9 +17,7 @@ export default function MainBoardLi({ item }: NoticeProps) {
   return (
     <li className="border-b-1 border-[#aaaaaa]">
       <Link
-        href={`/board/list/${item._id}`}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={`/board/view/${item._id}`}
         className="block w-full h-full py-6 px-2 "
       >
         <div className="flex items-center justify-between">
@@ -28,7 +26,10 @@ export default function MainBoardLi({ item }: NoticeProps) {
             {convertToKstTime(item.createdAt)}
           </span>
         </div>
-        <p className="font-bold text-xl mt-3">{item.title}</p>
+        <div className="flex items-start justify-between  mt-3">
+          <p className="font-bold text-xl">{item.title}</p>
+          <span className="text-[#aaaaaa]">작성자 : {item.name}</span>
+        </div>
       </Link>
     </li>
   );

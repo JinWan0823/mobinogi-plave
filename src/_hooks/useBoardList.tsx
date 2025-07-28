@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function useBoardList() {
   const [boardList, setBoardList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
@@ -11,6 +12,7 @@ export default function useBoardList() {
       if (!res.ok) throw new Error("서버 응답 실패");
       const data = await res.json();
       setBoardList(data);
+      setLoading(false);
     } catch (error) {
       console.error("게시판 리스트 로딩 실패", error);
     }
@@ -22,5 +24,6 @@ export default function useBoardList() {
 
   return {
     boardList,
+    loading,
   };
 }

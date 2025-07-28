@@ -42,7 +42,7 @@ export default function WriteForm() {
         return;
       }
       console.log(res.json());
-      router.push("/");
+      router.push("/board/list");
     } catch (error) {
       console.error("자유게시판 글 등록 실패", error);
     }
