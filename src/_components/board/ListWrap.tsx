@@ -4,15 +4,62 @@ import useBoardList from "@/_hooks/useBoardList";
 import LoadingSpinner from "../common/LoadingSpinner";
 import BoardList from "./BoardList";
 import Pagination from "./Pagination";
+import CategoryOpt from "../manager/CategoryOpt";
+import { MdOutlineSearch } from "react-icons/md";
 
 export default function ListWrap() {
-  const { boardList, loading, pageNum, handlePageNum, listCount } =
-    useBoardList();
+  const {
+    boardList,
+    loading,
+    pageNum,
+    setPageNum,
+    handlePageNum,
+    listCount,
+    selectedClasses,
+    setSelectedClasses,
+    boardCategory,
+    searchText,
+    setSearhText,
+    handleSearchSubmit,
+    setSearchQuery,
+  } = useBoardList();
   return (
     <>
-      <p className="text-sm text-[#aaaaaa] text-right p-1">
-        총 게시글 : {listCount}
-      </p>
+      <div className="flex items-end justify-between mb-2">
+        <div className="flex items-center gap-1">
+          <div className="w-[220px]">
+            <CategoryOpt
+              selectedClasses={selectedClasses}
+              setSelectedClasses={setSelectedClasses}
+              categoryList={boardCategory}
+              setPageNum={setPageNum}
+              setSearchQuery={setSearchQuery}
+            />
+          </div>
+          <form onSubmit={handleSearchSubmit} className="relative">
+            <input
+              type="text"
+              className="w-[400px] p-2
+              border border-[#dfdfdf] rounded-lg
+              relative"
+              placeholder="제목또는 작성자를 검색해주세요."
+              value={searchText}
+              onChange={(e) => setSearhText(e.target.value)}
+            />
+            <button
+              type="submit"
+              className="text-2xl text-point bg-[#fff]
+              absolute top-1/2 -translate-y-1/2 right-2
+            "
+            >
+              <MdOutlineSearch />
+            </button>
+          </form>
+        </div>
+        <p className="text-sm text-[#aaaaaa] text-right p-1">
+          총 게시글 : {listCount}
+        </p>
+      </div>
       <div
         className="overflow-hidden rounded-xl shadow-xl
         border-1 border-[#dfdfdf]"

@@ -12,12 +12,26 @@ export async function GET(req: NextRequest) {
   const limit = 10;
   const skip = (page - 1) * 10;
 
+  const category = searchParams.get("category");
+  const query: Record<string, unknown> = {};
+  if (category && category !== "전체") {
+    query.category = category;
+  }
+
+  const search = searchParams.get("search");
+  if (search && search.trim() !== "") {
+    query.$or = [
+      { title: { $regex: search, $options: "i" } },
+      { name: { $regex: search, $options: "i" } },
+    ];
+  }
+
   try {
-    const totalCount = await db.collection("board").countDocuments();
+    const totalCount = await db.collection("board").countDocuments(query);
 
     const board = await db
       .collection("board")
-      .find()
+      .find(query)
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limit)
