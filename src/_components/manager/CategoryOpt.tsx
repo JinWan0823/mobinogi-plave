@@ -8,19 +8,33 @@ interface CategoryProps {
   selectedClasses: string;
   setSelectedClasses: React.Dispatch<SetStateAction<string>>;
   categoryList?: string[];
+  setPageNum?: React.Dispatch<SetStateAction<number>>;
+  setSearchQuery?: React.Dispatch<SetStateAction<string>>;
 }
 
 export default function CategoryOpt({
   selectedClasses,
   setSelectedClasses,
   categoryList,
+  setPageNum,
+  setSearchQuery,
 }: CategoryProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSelect = (cls: string) => {
-    setSelectedClasses(cls);
-    setIsOpen(false);
-  };
+  let handleSelect;
+  if (setPageNum && setSearchQuery) {
+    handleSelect = (cls: string) => {
+      setSelectedClasses(cls);
+      setIsOpen(false);
+      setPageNum(1);
+      setSearchQuery("");
+    };
+  } else {
+    handleSelect = (cls: string) => {
+      setSelectedClasses(cls);
+      setIsOpen(false);
+    };
+  }
 
   return (
     <div className="relative w-[full]">
