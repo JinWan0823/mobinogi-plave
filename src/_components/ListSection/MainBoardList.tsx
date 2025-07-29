@@ -12,8 +12,8 @@ export default function MainBoardList() {
       const res = await fetch(`/api/board`);
       if (!res.ok) throw new Error("서버 응답 실패");
       const data = await res.json();
-      console.log(data);
-      setList(data);
+
+      setList(data.board.slice(0, 5));
     } catch (err) {
       console.error("서버 에러", err);
     }
