@@ -6,9 +6,13 @@ import BoardList from "./BoardList";
 import Pagination from "./Pagination";
 
 export default function ListWrap() {
-  const { boardList, loading, pageNum, handlePageNum } = useBoardList();
+  const { boardList, loading, pageNum, handlePageNum, listCount } =
+    useBoardList();
   return (
     <>
+      <p className="text-sm text-[#aaaaaa] text-right p-1">
+        총 게시글 : {listCount}
+      </p>
       <div
         className="overflow-hidden rounded-xl shadow-xl
         border-1 border-[#dfdfdf]"
@@ -34,7 +38,11 @@ export default function ListWrap() {
           )}
         </ul>
       </div>
-      <Pagination handlePageNum={handlePageNum} pageNum={pageNum} />
+      <Pagination
+        handlePageNum={handlePageNum}
+        pageNum={pageNum}
+        listCount={listCount}
+      />
     </>
   );
 }

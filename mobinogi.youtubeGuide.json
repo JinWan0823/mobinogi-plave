@@ -1,650 +1,442 @@
 [
   {
-    "_id": {
-      "$oid": "687d230d48d03d704ac90f9e"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=pV7OpmU1l_U",
-    "category": "대검전사",
-    "title": "대검전사 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d2ce4f6b3127a7367579d"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=yP5vu773C3M",
-    "category": "꿀팁",
-    "title": "꿀팁모음",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d2ce4f6b3127a7367579e"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=h_MlEnX6MMs",
-    "category": "꿀팁",
-    "title": "생활채집",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d2ce4f6b3127a7367579f"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=Devq-H_itns",
-    "category": "꿀팁",
-    "title": "글라스기브넨 어려움 난이도 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d2ce4f6b3127a736757a0"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=TgpAbocXpuY",
-    "category": "꿀팁",
-    "title": "화이트 서큐버스 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d2ce4f6b3127a736757a1"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=WcONU_XvGOs",
-    "category": "꿀팁",
-    "title": "어비스 던전 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d2ce4f6b3127a736757a2"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=MM2QzNOf9ho",
-    "category": "꿀팁",
-    "title": "다재다능 업적작 가이드",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757a3"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=LPgjt_OXJWg",
-    "category": "전사",
-    "title": "김진솔유튜브 검방전사 가이드",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757a4"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=Gg1tcczU6lg",
-    "category": "전사",
-    "title": "[마비노기 모바일] 검방 상위1%도 모르는 디테일 포함 연속 상향받은 검방 (진) 전사 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757a5"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=3266AS-4fH4",
-    "category": "전사",
-    "title": "[마비노기 모바일] 검방 전사 124, 134 무슨 차이일까",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757a6"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=MM2QzNOf9ho",
-    "category": "전사",
-    "title": "다재다능 업적작 가이드",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757a7"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=6pW7OS1FAxI&t=12s",
-    "category": "대검전사",
-    "title": "김진솔유튜브 검방 전사 124, 134 무슨 차이일까",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757a8"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=Devq-H_itns",
-    "category": "대검전사",
-    "title": "3.9만 투력 미쳤다.. 대검전사 1위 회반회 세팅 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757a9"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=V7HAUkUbsAk",
-    "category": "대검전사",
-    "title": "3.2배나 강력해진 대검전사!?ㅋㅋ 부캐를 직접 컨설팅 해보겠습니다~! [마비노기 모바일]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757aa"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=f6KUzIry8oM&t=1s",
-    "category": "검술사",
-    "title": "김진솔 마비노기 모바일 검술사 가이드 [입문부터 실전까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757ab"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=eKGd_KbAPck&t=510s",
-    "category": "궁수",
-    "title": "",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757ac"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=V7HAUkUbsAk",
-    "category": "석궁사수",
-    "title": "김진솔 마비노기 모바일 일반궁수 가이드 [입문부터 실전까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757ad"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=BbE107OuV98&t=2s",
-    "category": "장궁병",
-    "title": "김진솔 마비노기 모바일 장궁병 가이드 [입문부터 실전까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757ae"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=Yg4a8Vtk8EI",
-    "category": "장궁병",
-    "title": "【마비노기 모바일】패치후 궁 계속 쓰는 장궁병 꿀잼이네요! 3.1만 장궁병 세팅 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757af"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=-EUBKeg2na4",
-    "category": "마법사",
-    "title": "[마비노기 모바일】단순해보이지만 누구보다 복잡한 직업, 마법사 최신 공략 기본편 [직업 공략#27]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757b0"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=YyfG0oV2QfI",
-    "category": "마법사",
-    "title": "낭만 넘치는 직업 '마법사' 장인의 통합 컨설팅 가이드! [마비노기 모바일]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757b1"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=7lvi7-1uyyc&t=172s",
-    "category": "빙결술사",
-    "title": "김진솔 마비노기 모바일 빙결술사 가이드 [입문부터 실전까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757b2"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=lmNt68zWOfE",
-    "category": "빙결술사",
-    "title": "뉴비, 부캐 추천 1순위!! 빙결술사 세팅, 운용 가이드",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757b3"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=E1oc7Kt315Q",
-    "category": "빙결술사",
-    "title": "【마비노기 모바일】급이 다른 편안함, 3.3만 투력 빙결술사 세팅 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757b4"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=1kQT1fdncVM&t=1839s",
-    "category": "화염술사",
-    "title": "김진솔 마비노기 모바일 화염술사 가이드 [입문부터 실전까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757b5"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=lCFtp51Eang",
-    "category": "화염술사",
-    "title": "【마비노기 모바일】 새로 나온 최고점 2,4,5 스킬 콤보! 3.2만 화염술사 최신 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757b6"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=nEMf6ezW7gY",
-    "category": "화염술사",
-    "title": "[마비노기 모바일] 화염술사 가이드(추천룬,스탯,스킬 등) 딜사이클을 왜 이렇게 굴려야 하는지 기본원리부터 차근차근 쉽게 설명 드려요~",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757b7"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=f0oTsecT8Eo&t=9s",
-    "category": "전격술사",
-    "title": "김진솔 마비노기모바일 전격술사 가이드 영상",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757b8"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=J8xOPRInSw8",
-    "category": "전격술사",
-    "title": "【마비노기 모바일】전격술사 최고점 셋팅 완벽가이드",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757b9"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=PrNJTZrd0Gg",
-    "category": "힐러",
-    "title": "김진솔 마비노기 모바일 힐러 가이드 [입문부터 실전까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757ba"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=4BA04xtN5bo",
-    "category": "힐러",
-    "title": "【마비노기 모바일】극딜 힐러의 엔딩급 세팅, 3.3만 투력 계정 두개 비교해봤습니다. 세팅 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757bb"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=KzmlS5hwWO0",
-    "category": "힐러",
-    "title": "[마비노기 모바일] 3.57 랭커 힐러의 💫힐러 최종 세팅 영상💫",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757bc"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=a8hbgPXg55g",
-    "category": "사제",
-    "title": "【마비노기 모바일】힐량 미쳐버린 '힐 사제' 이거 신세계네요ㄷㄷ 3.1만 투력 사제 세팅 공략",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757bd"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=qnGZFmy-wi4",
-    "category": "수도사",
-    "title": "김진솔 마비노기 모바일 수도사 가이드 [입문부터 실전까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757be"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=oFSP8BxZmCI",
-    "category": "수도사",
-    "title": "【마비노기 모바일】드디어 딜 버프된 수도사!! 3.3만 투력 체감 비교 (현란함 극딜vs공격력 올인)",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757bf"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=Bo2-Kr_yAS4",
-    "category": "음유시인",
-    "title": "[마비노기 모바일] 음유시인 상향 이후 완벽 정리 최신 가이드",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757c0"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=-G_RLx21H7g",
-    "category": "음유시인",
-    "title": "[마비노기 모바일] 서큐 이후 음유시인 현황 정리",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757c1"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=LcpPBhZV5jc",
-    "category": "댄서",
-    "title": "김진솔 떡상한 댄서 바뀐사이클 가이드",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757c2"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=3M_gNC33dqI",
-    "category": "댄서",
-    "title": "마비노기 모바일 댄서 가이드 [입문부터 심화까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757c3"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=FcDAje6MWC8",
-    "category": "댄서",
-    "title": "[마비노기 모바일] 댄서 스킬 어떻게 굴리는지 설명해 드립니다! - 입문편 -",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757c4"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=TfngY2RN8BY",
-    "category": "댄서",
-    "title": "[마비노기 모바일]상향 받은 '댄서' . 검술사, 격투가도 이깁니다. 본캐 강력 추천",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757c5"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=AjQrICSzmrk",
-    "category": "악사",
-    "title": "마비노기 모바일 악사 가이드 [입문부터 실전까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757c6"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=mtuk9izJP04",
-    "category": "악사",
-    "title": "마비노기 모바일 악사 패치 후 레이드 어려움 2분 47초 파티",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757c7"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=wYKsXdvcwHw",
-    "category": "도적",
-    "title": "도적 공명, 파낙 세팅과 방향성 가이드 + 신규 지옥 난이도 사전 정보 총정리! [마비노기 모바일]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757c8"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=rpUBj4TGO0s",
-    "category": "도적",
-    "title": "밸런스 패치 이후 도적은 어떻게 됐을까? [마비노기 모바일]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757c9"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=tDSl_2ygy6s",
-    "category": "도적",
-    "title": "【마비노기 모바일】경이+현란함 갖춘 3만 투력 도적ㄷㄷ 최신 세팅 공략 [직업 공략#31]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757ca"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=U5KGcVqAlMM",
-    "category": "격투가",
-    "title": "1티어 사기캐릭터 격투가 최신 완벽 공략 [마비노기 모바일]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757cb"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=C0z4KpTRiqg",
-    "category": "격투가",
-    "title": "마비노기 모바일 격투가 가이드 [입문부터 실전까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757cc"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=jYG5-mYbDjs",
-    "category": "듀얼블레이드",
-    "title": "마비노기 모바일 듀얼블레이드 가이드 [입문부터 실전까지]",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757cd"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=1URx9gJerf4",
-    "category": "듀얼블레이드",
-    "title": "[마비노기 모바일] 직업가이드편 듀얼블레이드 상세가이드",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687d3479f6b3127a736757ce"
-    },
-    "youtubeLink": "https://www.youtube.com/watch?v=2wzdRgCgvq0",
-    "category": "듀얼블레이드",
-    "title": "【마비노기 모바일】연속 버프된 듀얼 블레이드, 이젠 1티어급 딜 나옵니다ㄷㄷ",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687f162eabdde7654b98cad1"
-    },
-    "title": "마비노기 모바일 석궁사수 가이드 [입문부터 실전까지]",
-    "youtubeLink": "https://www.youtube.com/watch?v=hCzgFH7xx68&t=177s",
-    "selectedClasses": "석궁사수",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:40:14.828Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687f1756abdde7654b98cad2"
-    },
-    "title": "마비노기 모바일 석궁사수 가이드 [입문부터 실전까지]",
-    "youtubeLink": "https://www.youtube.com/watch?v=hCzgFH7xx68&t=177s",
-    "selectedClasses": "석궁사수",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:45:10.461Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   },
   {
-    "_id": {
-      "$oid": "687f184fabdde7654b98cad3"
-    },
-    "title": "마비노기 모바일 석궁사수 가이드 [입문부터 실전까지]2",
-    "youtubeLink": "https://www.youtube.com/watch?v=hCzgFH7xx68&t=177s",
-    "category": "석궁사수",
-    "noticeChk": false,
-    "createdAt": {
-      "$date": "2025-07-22T04:49:19.673Z"
-    }
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
+  },
+  {
+    "title": "테스트제목",
+    "name": "곰쥬",
+    "password": "$2b$10$dwVXBo5CdfGwur/L/LYipOr215OEmiQU3nqGMeO5oCX9CuMnb.yh2",
+    "content": "테스트내용입니다.",
+    "createdAt": "2025-07-24T11:32:14.434Z",
+    "category": "자유게시글"
   }
 ]

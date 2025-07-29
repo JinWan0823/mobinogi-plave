@@ -7,19 +7,18 @@ export default function useBoardList() {
   const [loading, setLoading] = useState(true);
 
   const [pageNum, setPageNum] = useState(1);
-  const [listCount, setListCount] = useState();
+  const [listCount, setListCount] = useState(0);
 
   const fetchData = async () => {
-    setLoading(true);
     try {
       const res = await fetch(`/api/board?page=${pageNum}`);
       if (!res.ok) throw new Error("서버 응답 실패");
       const data = await res.json();
-      setBoardList(data);
+      setBoardList(data.board);
+      setListCount(data.totalCount);
+      setLoading(false);
     } catch (error) {
       console.error("게시판 리스트 로딩 실패", error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -36,5 +35,6 @@ export default function useBoardList() {
     loading,
     pageNum,
     handlePageNum,
+    listCount,
   };
 }

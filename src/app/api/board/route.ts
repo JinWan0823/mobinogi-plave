@@ -3,14 +3,24 @@ import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { ObjectId } from "mongodb";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   const client = await connectDB;
   const db = client.db("mobinogi");
+
+  const { searchParams } = new URL(req.url);
+  const page = Number(searchParams.get("page") || 1);
+  const limit = 10;
+  const skip = (page - 1) * 10;
+
   try {
+    const totalCount = await db.collection("board").countDocuments();
+
     const board = await db
       .collection("board")
       .find()
       .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit)
       .toArray();
 
     if (board.length === 0) {
@@ -20,7 +30,7 @@ export async function GET() {
       );
     }
 
-    return NextResponse.json(board, { status: 200 });
+    return NextResponse.json({ board, totalCount }, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { message: "서버 에러 발생", error: String(error) },
