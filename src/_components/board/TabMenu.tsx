@@ -44,7 +44,7 @@ export default function TabMenu() {
         {isOpen && (
           <ul
             className="absolute bottom-[-4px] left-0 translate-y-full
-          w-full bg-[#fff] shadow-xl border-1 border-[#dfdfdf]"
+          w-full bg-[#fff] shadow-xl border-1 border-[#dfdfdf] z-999"
           >
             <li className="w-full p-4">
               <Link
