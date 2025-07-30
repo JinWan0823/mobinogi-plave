@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MainBanner() {
   return (
@@ -14,14 +15,15 @@ export default function MainBanner() {
           개인 정보가 필요없는 공유 홈페이지!
         </h2>
 
-        <button
+        <Link
+          href={"/board/write"}
           className={`title bg-white text-point
           text-2xl py-3 px-16
           rounded-full border-2 border-point
           `}
         >
-          Main Btn
-        </button>
+          도움 요청!
+        </Link>
       </div>
 
       {/* 이미지 출처:  https://cafe.daum.net/plave/aaH8/6856?svc=TOPRANK (플레이브 팬카페) */}

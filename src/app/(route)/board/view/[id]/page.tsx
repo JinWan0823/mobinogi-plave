@@ -1,3 +1,4 @@
+import CommentWrap from "@/_components/board/CommentWrap";
 import SubBanner from "@/_components/board/SubBanner";
 import TabMenu from "@/_components/board/TabMenu";
 import ViewWrap from "@/_components/board/ViewWrap";
@@ -15,6 +16,7 @@ export default function BoardViewPage() {
       <section className="py-12">
         <div className="w-[1140px] mx-auto">
           <ViewWrap />
+          <CommentWrap />
           <div className="flex justify-center mt-8">
             <Link
               href="/board/list"

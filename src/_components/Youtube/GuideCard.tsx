@@ -25,7 +25,7 @@ export default function GuideCard({ item }: YoutubeCardProps) {
           alt={"중요체크"}
           width={100}
           height={100}
-          className="absolute top-[20px] left-[20px] -translate-x-1/2 -translate-y-1/2 z-9999"
+          className="absolute top-[20px] left-[20px] -translate-x-1/2 -translate-y-1/2 z-999"
         />
       )}
       <div className="relative w-full h-full rounded-[20px] overflow-hidden">
