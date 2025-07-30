@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 import LoadingSpinner from "../common/LoadingSpinner";
 import { convertToKstTime } from "@/_lib/convertToKstTime";
 import DeleteBtn from "./DeleteBtn";
-import Link from "next/link";
-import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import PostNavigator from "./PostNavigator";
+import CommentWrap from "./CommentWrap";
 
 interface BoardData {
   title: string;
@@ -42,8 +41,7 @@ export default function ViewWrap() {
             <h1 className="font-bold text-4xl">{boardData.title}</h1>
             <div
               className="overview mt-2 pb-4
-              flex items-center justify-between 
-              border-b-1 border-[#aaaaaa]"
+              flex items-center justify-between"
             >
               <div className="lf-box text-lg flex items-center">
                 <span className="w-[80px] h-[3px] bg-[#000] mr-2" />
@@ -59,10 +57,14 @@ export default function ViewWrap() {
               </div>
             </div>
 
-            <div className="content-box pt-[90px] pb-[120px] text-center">
+            <div
+              className="content-box pt-[90px] pb-[120px]
+              border-y-1 border-[#333]
+              text-center"
+            >
               <p>{boardData.content}</p>
             </div>
-
+            <CommentWrap />
             <PostNavigator />
           </>
         ) : (
