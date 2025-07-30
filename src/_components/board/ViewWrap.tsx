@@ -59,7 +59,7 @@ export default function ViewWrap() {
 
             <div
               className="content-box pt-[90px] pb-[120px]
-              border-y-1 border-[#333]
+              border-t-1 border-[#333]
               text-center"
             >
               <p>{boardData.content}</p>

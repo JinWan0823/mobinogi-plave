@@ -8,6 +8,7 @@ interface ListProps {
     category: string;
     name: string;
     createdAt: string;
+    commentCount: number;
   };
 }
 
@@ -24,7 +25,12 @@ export default function BoardList({ item }: ListProps) {
           </span>
         </div>
         <div className="flex-1 w-full overflow-hidden">
-          <h3 className="text-lg font-semibold px-2 ">{item.title}</h3>
+          <h3 className="text-lg font-semibold px-2 ">
+            {item.title}{" "}
+            <span className="text-sm ml-1 font-medium text-[#aaa]">
+              댓글({item.commentCount})
+            </span>
+          </h3>
         </div>
 
         <div className="flex items-center gap-2 text-center">

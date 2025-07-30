@@ -77,6 +77,7 @@ export async function POST(req: NextRequest) {
       password: hashedPassword,
       content: content,
       createdAt: new Date(),
+      commentCount: 0,
     };
     const result = await db.collection("board").insertOne(newBoard);
 
@@ -131,6 +132,7 @@ export async function DELETE(req: NextRequest) {
     }
 
     await db.collection("board").deleteOne({ _id: new ObjectId(_id) });
+    await db.collection("comment").deleteMany({ postId: new ObjectId(_id) });
 
     return NextResponse.json({ message: "삭제 완료" }, { status: 200 });
   } catch (error) {
