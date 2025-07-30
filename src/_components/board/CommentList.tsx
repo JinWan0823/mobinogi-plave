@@ -4,11 +4,12 @@ import { convertToKstTime } from "@/_lib/convertToKstTime";
 
 interface CommentProps {
   item: CommentType;
+  className?: string;
 }
 
-export default function CommentList({ item }: CommentProps) {
+export default function CommentList({ item, className }: CommentProps) {
   return (
-    <li className="p-2 py-4 border-t-1 border-[#dfdfdf]">
+    <li className={`p-2 py-4 ${className} border-[#dfdfdf]`}>
       <div className="overview flex items-center justify-between">
         <div className="flex items-center font-bold gap-1">
           <IoPeopleSharp className="text-lg" /> {item.name}

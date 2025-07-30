@@ -33,6 +33,9 @@ export async function POST(req: NextRequest) {
     };
     const result = await db.collection("comment").insertOne(newBoard);
 
+    await db
+      .collection("board")
+      .updateOne({ _id: new ObjectId(postId) }, { $inc: { commentCount: 1 } });
     return NextResponse.json(
       { message: "자유게시판 등록 성공", result },
       { status: 200 }

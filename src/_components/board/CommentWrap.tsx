@@ -28,13 +28,16 @@ export default function CommentWrap() {
       setCommentsData([]);
       return;
     }
-
     setCommentsData(data);
-    console.log(data);
   };
 
   return (
     <div className="w-full">
+      <div>
+        <p className="w-full border-1 border-[#aaa] rounded p-1 px-2 font-bold text-sm">
+          댓글({commentsData.length})
+        </p>
+      </div>
       <ul className="">
         {commentsData.length === 0 ? (
           <li className="py-[60px] text-[#aaa] flex flex-col justify-center items-center">
@@ -44,7 +47,13 @@ export default function CommentWrap() {
             </p>
           </li>
         ) : (
-          commentsData.map((item, idx) => <CommentList key={idx} item={item} />)
+          commentsData.map((item, idx) => (
+            <CommentList
+              key={idx}
+              item={item}
+              className={idx === 0 ? "" : "border-t-1"}
+            />
+          ))
         )}
       </ul>
       <CommentForm setCommentUpload={setCommentUpload} />
