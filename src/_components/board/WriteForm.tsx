@@ -44,6 +44,7 @@ export default function WriteForm() {
         return;
       }
       console.log(res.json());
+      showAlert("게시글을 등록하였습니다.");
       router.push("/board/list");
     } catch (error) {
       console.error("자유게시판 글 등록 실패", error);

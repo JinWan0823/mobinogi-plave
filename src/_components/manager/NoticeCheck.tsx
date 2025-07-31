@@ -1,4 +1,5 @@
 import { SetStateAction } from "react";
+import { FaCheck } from "react-icons/fa";
 
 interface NoticeCheckProps {
   setNoticeChk: React.Dispatch<SetStateAction<boolean>>;
@@ -16,10 +17,16 @@ export default function NoticeCheck({ title, setNoticeChk }: NoticeCheckProps) {
       />
       <label
         htmlFor="notice-chk"
-        className="relative w-5 h-5 mr-2 inline-block rounded border-2 border-[#dfdfdf] cursor-pointer transition-all duration-150
-            peer-checked:border-blue-500"
-      ></label>
-      <span className="text-sm select-none">{title}</span>
+        className="px-4 py-2 bg-gray-300
+        flex items-center gap-1
+        border-2 border-[#dfdfdf] rounded 
+        transition-all duration-150
+        cursor-pointer
+        peer-checked:bg-[#ff69b4]
+        peer-checked:text-white"
+      >
+        <FaCheck /> {title}
+      </label>
     </div>
   );
 }

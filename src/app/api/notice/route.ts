@@ -1,7 +1,8 @@
 export const runtime = "nodejs";
 
+import { connectDB } from "@/_lib/mongodb";
 import * as cheerio from "cheerio";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 const TARGET_URL = "https://mabinogimobile.nexon.com/News/Notice";
 
@@ -32,5 +33,41 @@ export async function GET() {
   } catch (error) {
     console.error("공지사항 크롤링 실패:", error);
     return NextResponse.json({ error: "크롤링 실패" }, { status: 500 });
+  }
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    const data = await req.json();
+    const { title, noticeLink, category, noticeChk } = data;
+
+    if (!title || !noticeLink || !category) {
+      return NextResponse.json(
+        { message: "필수 입력란을 확인해주세요." },
+        { status: 400 }
+      );
+    }
+
+    const client = await connectDB;
+    const db = client.db("mobinogi");
+
+    const newNotice = {
+      title,
+      noticeLink,
+      category,
+      noticeChk,
+      createdAt: new Date(),
+    };
+    const result = await db.collection("notice").insertOne(newNotice);
+
+    return NextResponse.json(
+      { message: "공지사항 등록 성공", result },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: "서버 에러 발생", error: String(error) },
+      { status: 500 }
+    );
   }
 }
