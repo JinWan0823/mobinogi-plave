@@ -71,7 +71,7 @@ export default function CommentForm({ setCommentUpload }: CommentProps) {
         </button>
       </div>
       <textarea
-        className="w-full mt-1 p-2 min-h-[120px]
+        className="w-full mt-1 p-2 min-h-[120px] bg-[#fbfbfb]
           border-1 border-[#dfdfdf] rounded"
         placeholder="내용을 입력해주세요."
         value={content}

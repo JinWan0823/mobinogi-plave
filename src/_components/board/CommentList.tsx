@@ -18,7 +18,9 @@ export default function CommentList({ item, className }: CommentProps) {
           {convertToKstTime(item.createdAt)}
         </p>
       </div>
-      <p className="mt-2 bg-[#eee] min-h-[70px] p-2 rounded">{item.content}</p>
+      <p className="mt-2 bg-[#fbfbfb] border-1 border-[#eee] min-h-[70px] p-2 rounded">
+        {item.content}
+      </p>
     </li>
   );
 }

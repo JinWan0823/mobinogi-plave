@@ -10,6 +10,7 @@ interface NoticeProps {
     createdAt: string;
     category: string;
     link: string;
+    commentCount: number;
   };
 }
 
@@ -27,7 +28,12 @@ export default function MainBoardLi({ item }: NoticeProps) {
           </span>
         </div>
         <div className="flex items-start justify-between  mt-3">
-          <p className="font-bold text-xl">{item.title}</p>
+          <p className="font-bold text-xl">
+            {item.title}
+            <span className="font-medium text-sm text-[#aaa] pl-1">
+              ({item.commentCount})
+            </span>
+          </p>
           <span className="text-[#aaaaaa]">작성자 : {item.name}</span>
         </div>
       </Link>

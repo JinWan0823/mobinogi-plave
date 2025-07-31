@@ -34,7 +34,7 @@ export default function CommentWrap() {
   return (
     <div className="w-full">
       <div>
-        <p className="w-full border-1 border-[#aaa] rounded p-1 px-2 font-bold text-sm">
+        <p className="w-full bg-[#dfdfdf] rounded p-1 px-2 font-bold text-sm">
           댓글({commentsData.length})
         </p>
       </div>
