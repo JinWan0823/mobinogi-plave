@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import NoticeCheck from "../manager/NoticeCheck";
 
-export const boardCategory = ["투표일정", "업데이트", "이벤트"];
+export const boardCategory = ["투표일정", "업데이트", "이벤트", "에린노트"];
 export default function NoticeWriteForm() {
   const [selectedClasses, setSelectedClasses] = useState("카테고리 선택");
   const [title, setTitle] = useState("");

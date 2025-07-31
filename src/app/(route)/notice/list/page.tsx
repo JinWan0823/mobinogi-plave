@@ -1,6 +1,6 @@
-import ListWrap from "@/_components/board/ListWrap";
 import SubBanner from "@/_components/board/SubBanner";
 import TabMenu from "@/_components/board/TabMenu";
+import NoticeWrap from "@/_components/notice/NoticeWrap";
 
 export default function NoticeListPage() {
   return (
@@ -14,7 +14,7 @@ export default function NoticeListPage() {
       </div>
       <section className="py-12">
         <div className="w-[1140px] mx-auto mt-4">
-          <ListWrap />
+          <NoticeWrap />
         </div>
       </section>
     </div>

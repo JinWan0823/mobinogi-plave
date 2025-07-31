@@ -13,7 +13,7 @@ export default function List() {
       if (!res.ok) throw new Error("서버 응답 실패");
       const data = await res.json();
       console.log(data);
-      setList(data);
+      setList(data.board);
     } catch (err) {
       console.error("서버 에러", err);
     }
@@ -28,7 +28,10 @@ export default function List() {
       <div className="w-[48%]">
         <div className="flex items-center justify-between">
           <p className="text-3xl font-bold pb-2">공지사항 & 이벤트</p>
-          <Link href={"/"} className="text-[#aaaaaa] flex items-center">
+          <Link
+            href={"/notice/list"}
+            className="text-[#aaaaaa] flex items-center"
+          >
             전체보기 <TbArrowBigRightLinesFilled className="text-lg ml-1" />
           </Link>
         </div>
