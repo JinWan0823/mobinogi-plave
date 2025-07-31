@@ -38,6 +38,7 @@ export default function useAdm() {
       } else {
         localStorage.removeItem("savedId");
       }
+      showAlert("로그인에 성공했습니다.");
       router.push("/");
     }
   };

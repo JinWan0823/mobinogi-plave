@@ -5,6 +5,7 @@ import { useState } from "react";
 import NoticeCheck from "./NoticeCheck";
 import { useRouter } from "next/navigation";
 import { useAlert } from "@/_context/AlertProvider";
+import useAuthRedirect from "@/_hooks/useAuthRedirect";
 
 export default function YoutubeForm() {
   const [selectedClasses, setSelectedClasses] = useState("꿀팁");
@@ -14,6 +15,10 @@ export default function YoutubeForm() {
 
   const router = useRouter();
   const { showAlert } = useAlert();
+
+  const status = useAuthRedirect(); // 로그인 상태 감시 및 리디렉션
+
+  if (status === "loading") return null;
 
   const handleSumit = async (e: React.FormEvent) => {
     e.preventDefault();

@@ -1,6 +1,7 @@
 "use client";
 import CategoryOpt from "@/_components/manager/CategoryOpt";
 import YoutubeList from "@/_components/manager/YoutubeList";
+import useAuthRedirect from "@/_hooks/useAuthRedirect";
 import useYoutubeManager from "@/_hooks/useYoutubeManager";
 import { GrPowerReset } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
@@ -16,6 +17,11 @@ export default function GuideListPage() {
     handleCheckItem,
     handleDeleteList,
   } = useYoutubeManager();
+
+  const status = useAuthRedirect(); // 로그인 상태 감시 및 리디렉션
+
+  if (status === "loading") return null;
+
   return (
     <section className="w-[1240px] mx-auto p-6 pt-[100px]">
       <div className="flex items-center justify-between">
