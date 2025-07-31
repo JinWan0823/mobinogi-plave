@@ -2,7 +2,9 @@ export const runtime = "nodejs";
 
 import { connectDB } from "@/_lib/mongodb";
 import * as cheerio from "cheerio";
+import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
+import { authOptions } from "../auth/[...nextauth]/authOptions";
 
 const TARGET_URL = "https://mabinogimobile.nexon.com/News/Notice";
 
@@ -37,6 +39,15 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
+  const session = await getServerSession(authOptions);
+
+  if (!session || !session?.user) {
+    return Response.json(
+      { message: "로그인 정보가 필요합니다." },
+      { status: 400 }
+    );
+  }
+
   try {
     const data = await req.json();
     const { title, noticeLink, category, noticeChk } = data;

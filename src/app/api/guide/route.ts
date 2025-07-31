@@ -1,6 +1,8 @@
 import { connectDB } from "@/_lib/mongodb";
 import { ObjectId } from "mongodb";
+import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
+import { authOptions } from "../auth/[...nextauth]/authOptions";
 
 export async function GET(req: NextRequest) {
   const client = await connectDB;
@@ -35,6 +37,15 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
+  const session = await getServerSession(authOptions);
+
+  if (!session || !session?.user) {
+    return Response.json(
+      { message: "로그인 정보가 필요합니다." },
+      { status: 400 }
+    );
+  }
+
   try {
     const data = await req.json();
     const { title, youtubeLink, category, noticeChk } = data;
@@ -73,6 +84,15 @@ export async function POST(req: NextRequest) {
 export async function DELETE(req: NextRequest) {
   const { ids }: { ids: string[] } = await req.json();
 
+  const session = await getServerSession(authOptions);
+
+  if (!session || !session?.user) {
+    return Response.json(
+      { message: "로그인 정보가 필요합니다." },
+      { status: 400 }
+    );
+  }
+
   if (!ids || ids.length === 0) {
     return NextResponse.json(
       { message: "삭제할 항목이 없습니다." },
@@ -101,6 +121,15 @@ export async function DELETE(req: NextRequest) {
 
 export async function PATCH(req: NextRequest) {
   const { _id, notice }: { _id: string; notice: boolean } = await req.json();
+
+  const session = await getServerSession(authOptions);
+
+  if (!session || !session?.user) {
+    return Response.json(
+      { message: "로그인 정보가 필요합니다." },
+      { status: 400 }
+    );
+  }
 
   try {
     const client = await connectDB;
