@@ -5,6 +5,7 @@ import { Jua, Press_Start_2P } from "next/font/google";
 import Header from "@/_components/common/Header";
 import Footer from "@/_components/common/Footer";
 import { AlertProvider } from "@/_context/AlertProvider";
+import SessionProviderWrapper from "./SessionProviderWrapper";
 
 const jua = Jua({
   weight: "400",
@@ -31,11 +32,13 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <AlertProvider>
-          <Header />
-          {children}
-          <Footer />
-        </AlertProvider>
+        <SessionProviderWrapper>
+          <AlertProvider>
+            <Header />
+            {children}
+            <Footer />
+          </AlertProvider>
+        </SessionProviderWrapper>
       </body>
     </html>
   );

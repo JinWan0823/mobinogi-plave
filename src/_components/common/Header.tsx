@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Btn from "./Btn";
+import AdminBtn from "./AdminBtn";
 
 export default function Header() {
   return (
@@ -15,7 +15,7 @@ export default function Header() {
           MOBINOGI - PLAVE
         </h1>
       </Link>
-      <Btn title="Login" size="xl" />
+      <AdminBtn />
     </header>
   );
 }

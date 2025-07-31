@@ -5,9 +5,12 @@ import GuideCard from "../Youtube/GuideCard";
 import { AnimatePresence, motion } from "framer-motion";
 import LoadingSpinner from "../common/LoadingSpinner";
 import ManagerBtn from "../common/ManagerBtn";
+import { useSession } from "next-auth/react";
 
 export default function YoutubeSection() {
   const { videos, activeIdx, setActiveIdx, loading } = useGuide();
+
+  const { data: session } = useSession();
 
   return (
     <section className="w-full py-40">
@@ -18,7 +21,7 @@ export default function YoutubeSection() {
         "
         >
           <p className="text-3xl font-bold">클래스별 유튜브 가이드</p>
-          <ManagerBtn link="/guide/list" />
+          {session?.user && <ManagerBtn link="/guide/list" />}
         </div>
         <ul className="flex flex-wrap items-center mt-4 mb-8 gap-2">
           {mobinogiClasses.map((item, idx) => (
