@@ -23,6 +23,7 @@ export default function LoginClient() {
       style={{ backgroundImage: "url(/main/mobinogi_banner.png)" }}
     >
       <div className="p-4 py-8 w-[98%] max-w-[450px] rounded-[12px] bg-[#fff] shadow-xl border-1 border-[#dfdfdf]">
+        <p className="text-center text-blue-400">관리자 로그인</p>
         <Link href={"/"}>
           <h1 draggable="false" className="text-2xl text-point text-center">
             MOBINOGI - PLAVE
