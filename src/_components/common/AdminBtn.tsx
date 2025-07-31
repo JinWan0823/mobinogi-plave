@@ -20,6 +20,10 @@ export default function AdminBadge() {
     router.push("/");
   };
 
+  const handleLogin = () => {
+    router.push("/adm");
+  };
+
   if (session?.user) {
     return (
       <button
@@ -33,5 +37,14 @@ export default function AdminBadge() {
     );
   }
 
-  return null;
+  return (
+    <button
+      onClick={handleLogin}
+      className="title bg-white
+        text-xl p-1 px-6 
+        rounded-full border-2 border-point"
+    >
+      Login
+    </button>
+  );
 }

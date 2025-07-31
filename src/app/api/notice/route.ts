@@ -1,3 +1,5 @@
+export const runtime = "nodejs";
+
 import * as cheerio from "cheerio";
 import { NextResponse } from "next/server";
 
