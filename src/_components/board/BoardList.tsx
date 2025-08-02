@@ -8,11 +8,42 @@ interface ListProps {
     category: string;
     name: string;
     createdAt: string;
-    commentCount: number;
+    commentCount?: number;
+    noticeLink?: string;
   };
 }
 
 export default function BoardList({ item }: ListProps) {
+  if (item.noticeLink)
+    return (
+      <li>
+        <Link
+          href={item.noticeLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex justify-between items-center p-4 border-b border-[#dfdfdf]"
+        >
+          <div className="w-[140px] flex justify-center">
+            <span className="p-1 px-4 text-[#aaaaaa] border-1 border-1-[#aaaaaa] rounded-full">
+              {item.category}
+            </span>
+          </div>
+          <div className="flex-1 w-full overflow-hidden">
+            <h3 className="text-lg font-semibold px-2 ">{item.title} </h3>
+          </div>
+
+          <div className="flex items-center gap-2 text-center">
+            <span className="text-sm text-gray-600 w-[100px] ">
+              {item.name}
+            </span>
+            <span className="text-sm text-gray-600 w-[100px]">
+              {convertToKstTime(item.createdAt)}
+            </span>
+          </div>
+        </Link>
+      </li>
+    );
+
   return (
     <li>
       <Link
@@ -27,9 +58,11 @@ export default function BoardList({ item }: ListProps) {
         <div className="flex-1 w-full overflow-hidden">
           <h3 className="text-lg font-semibold px-2 ">
             {item.title}{" "}
-            <span className="text-sm ml-1 font-medium text-[#aaa]">
-              댓글({item.commentCount})
-            </span>
+            {item.commentCount && (
+              <span className="text-sm ml-1 font-medium text-[#aaa]">
+                댓글({item.commentCount})
+              </span>
+            )}
           </h3>
         </div>
 

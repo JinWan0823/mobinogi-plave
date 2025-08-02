@@ -1,45 +1,62 @@
-export const runtime = "nodejs";
-
 import { connectDB } from "@/_lib/mongodb";
-import * as cheerio from "cheerio";
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 import { authOptions } from "../auth/[...nextauth]/authOptions";
 
-const TARGET_URL = "https://mabinogimobile.nexon.com/News/Notice";
+export async function GET(req: NextRequest) {
+  const client = await connectDB;
+  const db = client.db("mobinogi");
 
-export async function GET() {
+  const { searchParams } = new URL(req.url);
+  const page = Number(searchParams.get("page") || 1);
+  const limit = 10;
+  const skip = (page - 1) * 10;
+
+  const category = searchParams.get("category");
+  const query: Record<string, unknown> = {};
+  if (category && category !== "전체") {
+    query.category = category;
+  }
+
+  const search = searchParams.get("search");
+  if (search && search.trim() !== "") {
+    query.$or = [
+      { title: { $regex: search, $options: "i" } },
+      { name: { $regex: search, $options: "i" } },
+    ];
+  }
+
   try {
-    const res = await fetch(TARGET_URL, {
-      headers: { "User-Agent": "Mozilla/5.0" },
-      cache: "no-store",
-    });
+    const totalCount = await db.collection("notice").countDocuments(query);
 
-    const html = await res.text();
-    const $ = cheerio.load(html);
+    const board = await db
+      .collection("notice")
+      .find(query)
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit)
+      .toArray();
 
-    const noticeList = $(".list .item")
-      .slice(0, 5)
-      .map((_, el) => {
-        const category = $(el).find(".type span").text().trim();
-        const title = $(el).find(".title span").text().trim();
-        const date = $(el).find(".date span").text().trim();
-        const threadId = $(el).attr("data-threadid");
-        const link = `https://mabinogimobile.nexon.com/News/Notice/${threadId}`;
+    if (board.length === 0) {
+      return NextResponse.json(
+        { message: "존재하는 게시글이 없습니다." },
+        { status: 404 }
+      );
+    }
 
-        return { category, title, date, link };
-      })
-      .get();
-
-    return NextResponse.json(noticeList);
+    return NextResponse.json({ board, totalCount }, { status: 200 });
   } catch (error) {
-    console.error("공지사항 크롤링 실패:", error);
-    return NextResponse.json({ error: "크롤링 실패" }, { status: 500 });
+    return NextResponse.json(
+      { message: "서버 에러 발생", error: String(error) },
+      { status: 500 }
+    );
   }
 }
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions);
+
+  console.log(session);
 
   if (!session || !session?.user) {
     return Response.json(
@@ -62,11 +79,14 @@ export async function POST(req: NextRequest) {
     const client = await connectDB;
     const db = client.db("mobinogi");
 
+    const name = session.user.username === "admin" ? "최고관리자" : "관리자";
+
     const newNotice = {
       title,
       noticeLink,
       category,
       noticeChk,
+      name: name,
       createdAt: new Date(),
     };
     const result = await db.collection("notice").insertOne(newNotice);

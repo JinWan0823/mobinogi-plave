@@ -7,6 +7,7 @@ import bcrypt from "bcryptjs";
 interface UserProps {
   id: string;
   username: string;
+  name: string;
 }
 
 export const authOptions: NextAuthOptions = {
@@ -16,6 +17,7 @@ export const authOptions: NextAuthOptions = {
       credentials: {
         username: { label: "아이디", type: "text" },
         password: { label: "비밀번호", type: "password" },
+        name: { label: "유저이름", type: "text" },
       },
       async authorize(credentials) {
         const db = (await connectDB).db("draft");
@@ -33,6 +35,7 @@ export const authOptions: NextAuthOptions = {
         return {
           id: user._id.toString(),
           username: user.username,
+          name: user.name,
         } as UserProps;
       },
     }),
