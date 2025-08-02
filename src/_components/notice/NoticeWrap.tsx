@@ -1,8 +1,6 @@
 "use client";
 
-import useBoardList from "@/_hooks/useBoardList";
 import LoadingSpinner from "../common/LoadingSpinner";
-
 import CategoryOpt from "../manager/CategoryOpt";
 import { MdOutlineSearch } from "react-icons/md";
 import BoardList from "../board/BoardList";

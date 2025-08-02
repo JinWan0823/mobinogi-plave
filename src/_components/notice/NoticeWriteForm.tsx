@@ -18,7 +18,7 @@ export default function NoticeWriteForm() {
   const { showAlert } = useAlert();
 
   const status = useAuthRedirect(); // 로그인 상태 감시 및 리디렉션
-
+  console.log(status);
   if (status === "loading") return null;
 
   const handleSubmitBoard = async (e: React.FormEvent) => {

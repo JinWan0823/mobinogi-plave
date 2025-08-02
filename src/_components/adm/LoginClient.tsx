@@ -1,7 +1,6 @@
 "use client";
 
 import useAdm from "@/_hooks/useAdm";
-import Image from "next/image";
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 

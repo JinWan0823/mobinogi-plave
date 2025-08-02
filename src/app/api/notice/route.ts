@@ -56,6 +56,8 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions);
 
+  console.log(session);
+
   if (!session || !session?.user) {
     return Response.json(
       { message: "로그인 정보가 필요합니다." },
@@ -77,11 +79,14 @@ export async function POST(req: NextRequest) {
     const client = await connectDB;
     const db = client.db("mobinogi");
 
+    const name = session.user.username === "admin" ? "최고관리자" : "관리자";
+
     const newNotice = {
       title,
       noticeLink,
       category,
       noticeChk,
+      name: name,
       createdAt: new Date(),
     };
     const result = await db.collection("notice").insertOne(newNotice);
