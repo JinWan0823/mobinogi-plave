@@ -28,7 +28,12 @@ export default function NoticeList({ item }: NoticeProps) {
             {convertToKstTime(item.createdAt)}
           </span>
         </div>
-        <p className="font-bold text-xl mt-3">{item.title}</p>
+        <div className="flex items-start justify-between  mt-3">
+          <p className="font-bold text-xl pr-10 overflow-hidden text-ellipsis whitespace-nowrap">
+            {item.title}
+          </p>
+          <span className="text-[#aaaaaa] shrink-0">{item.name}</span>
+        </div>
       </Link>
     </li>
   );

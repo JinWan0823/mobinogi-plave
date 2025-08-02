@@ -6,6 +6,8 @@ import { MdOutlineSearch } from "react-icons/md";
 import BoardList from "../board/BoardList";
 import Pagination from "../board/Pagination";
 import useNoticeList from "@/_hooks/useNoticeList";
+import WriteBtn from "../board/WriteBtn";
+import { useSession } from "next-auth/react";
 
 export default function NoticeWrap() {
   const {
@@ -23,6 +25,9 @@ export default function NoticeWrap() {
     handleSearchSubmit,
     setSearchQuery,
   } = useNoticeList();
+
+  const { data: session } = useSession();
+
   return (
     <>
       <div className="flex items-end justify-between mb-2">
@@ -56,9 +61,12 @@ export default function NoticeWrap() {
             </button>
           </form>
         </div>
-        <p className="text-sm text-[#aaaaaa] text-right p-1">
-          총 게시글 : {listCount}
-        </p>
+        <div className="flex items-end gap-1">
+          <p className="text-sm text-[#aaaaaa] text-right p-1">
+            총 게시글 : {listCount}
+          </p>
+          {session?.user && <WriteBtn type="notice" />}
+        </div>
       </div>
       <div
         className="overflow-hidden rounded-xl shadow-xl

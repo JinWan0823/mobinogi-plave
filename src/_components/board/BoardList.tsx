@@ -58,11 +58,9 @@ export default function BoardList({ item }: ListProps) {
         <div className="flex-1 w-full overflow-hidden">
           <h3 className="text-lg font-semibold px-2 ">
             {item.title}{" "}
-            {item.commentCount && (
-              <span className="text-sm ml-1 font-medium text-[#aaa]">
-                댓글({item.commentCount})
-              </span>
-            )}
+            <span className="text-sm ml-1 font-medium text-[#aaa]">
+              댓글({item.commentCount})
+            </span>
           </h3>
         </div>
 

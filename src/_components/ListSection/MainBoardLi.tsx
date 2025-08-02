@@ -28,13 +28,15 @@ export default function MainBoardLi({ item }: NoticeProps) {
           </span>
         </div>
         <div className="flex items-start justify-between  mt-3">
-          <p className="font-bold text-xl">
-            {item.title}
-            <span className="font-medium text-sm text-[#aaa] pl-1">
+          <div className="flex items-center">
+            <p className="font-bold text-xl overflow-hidden text-ellipsis whitespace-nowrap">
+              {item.title}
+            </p>
+            <span className="font-medium text-sm text-[#aaa] pl-1 shrink-0">
               ({item.commentCount})
             </span>
-          </p>
-          <span className="text-[#aaaaaa]">작성자 : {item.name}</span>
+          </div>
+          <span className="text-[#aaaaaa] shrink-0">작성자 : {item.name}</span>
         </div>
       </Link>
     </li>

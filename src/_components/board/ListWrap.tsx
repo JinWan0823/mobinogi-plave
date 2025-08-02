@@ -6,6 +6,7 @@ import BoardList from "./BoardList";
 import Pagination from "./Pagination";
 import CategoryOpt from "../manager/CategoryOpt";
 import { MdOutlineSearch } from "react-icons/md";
+import WriteBtn from "./WriteBtn";
 
 export default function ListWrap() {
   const {
@@ -56,9 +57,12 @@ export default function ListWrap() {
             </button>
           </form>
         </div>
-        <p className="text-sm text-[#aaaaaa] text-right p-1">
-          총 게시글 : {listCount}
-        </p>
+        <div className="flex items-end gap-1">
+          <p className="text-sm text-[#aaaaaa] text-right p-1">
+            총 게시글 : {listCount}
+          </p>
+          <WriteBtn type="board" />
+        </div>
       </div>
       <div
         className="overflow-hidden rounded-xl shadow-xl
