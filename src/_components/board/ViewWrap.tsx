@@ -29,7 +29,6 @@ export default function ViewWrap() {
     const res = await fetch(`/api/board/${id}`);
     const data = await res.json();
     setBoardData(data);
-    console.log(data);
   };
 
   return (

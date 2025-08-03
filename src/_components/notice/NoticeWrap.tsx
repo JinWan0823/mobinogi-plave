@@ -24,6 +24,7 @@ export default function NoticeWrap() {
     setSearhText,
     handleSearchSubmit,
     setSearchQuery,
+    setUpdateData,
   } = useNoticeList();
 
   const { data: session } = useSession();
@@ -69,7 +70,7 @@ export default function NoticeWrap() {
         </div>
       </div>
       <div
-        className="overflow-hidden rounded-xl shadow-xl
+        className="rounded-xl shadow-xl
         border-1 border-[#dfdfdf]"
       >
         <ul>
@@ -84,10 +85,18 @@ export default function NoticeWrap() {
             <div className="flex items-center gap-2 text-center">
               <span className="text-sm text-gray-600 w-[100px] ">작성자</span>
               <span className="text-sm text-gray-600 w-[100px]">날짜</span>
+              {session?.user && <div className="w-[36px]"></div>}
             </div>
           </li>
           {!loading ? (
-            boardList.map((item, idx) => <BoardList key={idx} item={item} />)
+            boardList.map((item, idx) => (
+              <BoardList
+                key={idx}
+                item={item}
+                user={session?.user}
+                setUpdateData={setUpdateData}
+              />
+            ))
           ) : (
             <LoadingSpinner />
           )}

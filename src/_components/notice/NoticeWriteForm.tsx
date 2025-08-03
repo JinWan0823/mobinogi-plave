@@ -18,7 +18,6 @@ export default function NoticeWriteForm() {
   const { showAlert } = useAlert();
 
   const status = useAuthRedirect(); // 로그인 상태 감시 및 리디렉션
-  console.log(status);
   if (status === "loading") return null;
 
   const handleSubmitBoard = async (e: React.FormEvent) => {
@@ -46,7 +45,6 @@ export default function NoticeWriteForm() {
         showAlert("필수 입력란을 확인해주세요.");
         return;
       }
-      console.log(res.json());
       showAlert("공지사항 등록 성공!");
       router.push("/notice/list");
     } catch (error) {

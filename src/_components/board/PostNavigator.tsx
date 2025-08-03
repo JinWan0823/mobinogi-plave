@@ -32,7 +32,6 @@ export default function PostNavigator() {
     const res = await fetch(`/api/board/${id}/post`);
     const data = await res.json();
     setPostData(data);
-    console.log(data);
   };
 
   if (!postData) return null;

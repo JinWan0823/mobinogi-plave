@@ -15,7 +15,6 @@ export default function useAuthRedirect() {
       showAlert("로그인이 필요합니다.");
       router.replace("/adm");
     }
-    console.log(session);
   }, [status, showAlert, router]);
 
   return status;

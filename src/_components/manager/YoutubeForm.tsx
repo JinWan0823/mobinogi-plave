@@ -48,8 +48,6 @@ export default function YoutubeForm() {
         showAlert("필수 입력란을 확인해주세요.");
         return;
       }
-      console.log(res.json());
-      router.push("/guide/list");
     } catch (err) {
       console.error("유튜브 영상 등록 실패", err);
     }

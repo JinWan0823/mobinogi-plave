@@ -43,7 +43,6 @@ export default function WriteForm() {
         showAlert("필수 입력란을 확인해주세요.");
         return;
       }
-      console.log(res.json());
       showAlert("게시글을 등록하였습니다.");
       router.push("/board/list");
     } catch (error) {
