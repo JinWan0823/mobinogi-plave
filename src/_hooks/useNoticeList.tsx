@@ -16,6 +16,8 @@ export default function useNoticeList() {
   const [searchText, setSearhText] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const [updateData, setUpdateData] = useState(false);
+
   const { showAlert } = useAlert();
 
   const fetchData = async () => {
@@ -54,7 +56,7 @@ export default function useNoticeList() {
 
   useEffect(() => {
     fetchData();
-  }, [pageNum, selectedClasses, searchQuery]);
+  }, [pageNum, selectedClasses, searchQuery, updateData]);
 
   return {
     boardList,
@@ -70,5 +72,6 @@ export default function useNoticeList() {
     setSearhText,
     handleSearchSubmit,
     setSearchQuery,
+    setUpdateData,
   };
 }

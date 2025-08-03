@@ -9,7 +9,6 @@ export default function useYoutube() {
       const res = await fetch("/api/youtube");
       if (!res.ok) throw new Error("서버 응답 실패");
       const data = await res.json();
-      console.log(data);
       setVideos(data);
       setLoading(true);
     } catch (err) {

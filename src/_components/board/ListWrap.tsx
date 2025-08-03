@@ -58,14 +58,14 @@ export default function ListWrap() {
           </form>
         </div>
         <div className="flex items-end gap-1">
+          <WriteBtn type="board" />
           <p className="text-sm text-[#aaaaaa] text-right p-1">
             총 게시글 : {listCount}
           </p>
-          <WriteBtn type="board" />
         </div>
       </div>
       <div
-        className="overflow-hidden rounded-xl shadow-xl
+        className="rounded-xl shadow-xl
         border-1 border-[#dfdfdf]"
       >
         <ul>
