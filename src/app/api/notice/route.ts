@@ -33,7 +33,7 @@ export async function GET(req: NextRequest) {
     const board = await db
       .collection("notice")
       .find(query)
-      .sort({ createdAt: -1 })
+      .sort({ noticeChk: -1, createdAt: -1 })
       .skip(skip)
       .limit(limit)
       .toArray();

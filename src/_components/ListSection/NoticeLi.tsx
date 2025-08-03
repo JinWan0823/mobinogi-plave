@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CategoryBadge from "./CategoryBadge";
 import { convertToKstTime } from "@/_lib/convertToKstTime";
+import { BiSolidMegaphone } from "react-icons/bi";
 
 interface NoticeProps {
   item: {
@@ -10,6 +11,7 @@ interface NoticeProps {
     createdAt: string;
     category: string;
     noticeLink: string;
+    noticeChk: boolean;
   };
 }
 
@@ -23,7 +25,17 @@ export default function NoticeList({ item }: NoticeProps) {
         className="block w-full h-full py-6 px-2 "
       >
         <div className="flex items-center justify-between">
-          <CategoryBadge category={item.category} />
+          {item.noticeChk ? (
+            <span
+              className="p-1 px-4 bg-red-400 text-white rounded-full
+                          flex items-center justify-center gap-1"
+            >
+              <BiSolidMegaphone /> 중요 공지
+            </span>
+          ) : (
+            <CategoryBadge category={item.category} />
+          )}
+
           <span className="text-[#aaaaaa]">
             {convertToKstTime(item.createdAt)}
           </span>
