@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default function BoardViewPage({ params }: { params: { id: string } }) {
+export default function BoardViewPage({ params }: PageProps) {
   return (
     <>
       <SubBanner />
