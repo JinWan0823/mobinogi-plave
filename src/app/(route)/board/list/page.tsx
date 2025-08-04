@@ -1,6 +1,9 @@
 import ListWrap from "@/_components/board/ListWrap";
 import SubBanner from "@/_components/board/SubBanner";
 import TabMenu from "@/_components/board/TabMenu";
+import { getMetaData } from "@/_lib/metadata";
+
+export const metadata = getMetaData({ page: "board" });
 
 export default function BoardListPage() {
   return (

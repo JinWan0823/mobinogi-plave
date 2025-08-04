@@ -1,6 +1,9 @@
 import SubBanner from "@/_components/board/SubBanner";
 import TabMenu from "@/_components/board/TabMenu";
 import NoticeWriteForm from "@/_components/notice/NoticeWriteForm";
+import { getMetaData } from "@/_lib/metadata";
+
+export const metadata = getMetaData({ page: "notice" });
 
 export default function NoticeWritePage() {
   return (
