@@ -4,13 +4,13 @@ import ViewWrap from "@/_components/board/ViewWrap";
 import { getBoardPostById } from "@/_lib/api";
 import Link from "next/link";
 
-interface PageProps {
+interface BoardViewPageProps {
   params: {
     id: string;
   };
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: BoardViewPageProps) {
   const post = await getBoardPostById(params.id);
 
   return {
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default function BoardViewPage({ params }: PageProps) {
+export default function BoardViewPage({ params }: BoardViewPageProps) {
   return (
     <>
       <SubBanner />
