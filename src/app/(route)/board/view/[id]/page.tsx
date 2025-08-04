@@ -5,25 +5,23 @@ import { getBoardPostById } from "@/_lib/api";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export async function generateMetadata({
+export function generateMetadata({
   params,
 }: {
   params: { id: string };
-}): Promise<Metadata> {
-  const post = await getBoardPostById(params.id);
-
+}): Metadata {
   return {
-    title: post?.title ?? "자유게시판",
-    description: post?.content?.slice(0, 100) ?? "자유게시판 글입니다.",
+    title: `게시글 - ${params.id}`,
+    description: "자유게시판 글입니다.",
     openGraph: {
-      title: post?.title ?? "자유게시판",
-      description: post?.content?.slice(0, 100) ?? "자유게시판 글입니다.",
+      title: `게시글 - ${params.id}`,
+      description: "자유게시판 글입니다.",
       images: [`${process.env.NEXT_PUBLIC_BASE_URL}/og/home.png`],
     },
     twitter: {
       card: "summary_large_image",
-      title: post?.title ?? "자유게시판",
-      description: post?.content?.slice(0, 100) ?? "자유게시판 글입니다.",
+      title: `게시글 - ${params.id}`,
+      description: "자유게시판 글입니다.",
       images: [`${process.env.NEXT_PUBLIC_BASE_URL}/og/home.png`],
     },
   };

@@ -6,16 +6,16 @@ import DeleteBtn from "./DeleteBtn";
 import PostNavigator from "./PostNavigator";
 import CommentWrap from "./CommentWrap";
 
-interface BoardData {
+interface BoardPost {
+  _id: string;
   title: string;
+  content: string;
   category: string;
   createdAt: string;
   name: string;
-  _id: string;
-  content: string;
 }
 
-export default function ViewWrap({ post }: { post: BoardData }) {
+export default function ViewWrap({ post }: { post: BoardPost }) {
   return (
     <>
       {post && <DeleteBtn name={post.name} id={post._id} />}
