@@ -2,14 +2,15 @@ import SubBanner from "@/_components/board/SubBanner";
 import TabMenu from "@/_components/board/TabMenu";
 import ViewWrap from "@/_components/board/ViewWrap";
 import { getBoardPostById } from "@/_lib/api";
-import { Metadata } from "next";
 import Link from "next/link";
 
-interface Props {
-  params: { id: string };
+interface PageProps {
+  params: {
+    id: string;
+  };
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps) {
   const post = await getBoardPostById(params.id);
 
   return {
