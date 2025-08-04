@@ -2,6 +2,7 @@ import SubBanner from "@/_components/board/SubBanner";
 import TabMenu from "@/_components/board/TabMenu";
 import ViewWrap from "@/_components/board/ViewWrap";
 import { getBoardPostById } from "@/_lib/api";
+import { Metadata } from "next";
 import Link from "next/link";
 
 interface BoardViewPageProps {
@@ -10,7 +11,9 @@ interface BoardViewPageProps {
   };
 }
 
-export async function generateMetadata({ params }: BoardViewPageProps) {
+export async function generateMetadata({
+  params,
+}: BoardViewPageProps): Promise<Metadata> {
   const post = await getBoardPostById(params.id);
 
   return {
