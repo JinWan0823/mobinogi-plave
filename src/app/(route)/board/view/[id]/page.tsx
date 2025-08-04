@@ -5,15 +5,11 @@ import { getBoardPostById } from "@/_lib/api";
 import { Metadata } from "next";
 import Link from "next/link";
 
-interface BoardViewPageProps {
-  params: {
-    id: string;
-  };
-}
-
 export async function generateMetadata({
   params,
-}: BoardViewPageProps): Promise<Metadata> {
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
   const post = await getBoardPostById(params.id);
 
   return {
@@ -33,7 +29,12 @@ export async function generateMetadata({
   };
 }
 
-export default function BoardViewPage({ params }: BoardViewPageProps) {
+export default async function BoardViewPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const post = await getBoardPostById(params.id);
   return (
     <>
       <SubBanner />
@@ -45,8 +46,13 @@ export default function BoardViewPage({ params }: BoardViewPageProps) {
       </div>
       <section className="py-12">
         <div className="w-[1140px] mx-auto">
-          <ViewWrap id={params.id} />
-
+          {post ? (
+            <ViewWrap post={post} />
+          ) : (
+            <p className="text-center text-red-500">
+              게시글을 찾을 수 없습니다.
+            </p>
+          )}
           <div className="flex justify-center mt-8">
             <Link
               href="/board/list"
