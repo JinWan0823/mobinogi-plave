@@ -5,34 +5,36 @@ import { getBoardPostById } from "@/_lib/api";
 import { Metadata } from "next";
 import Link from "next/link";
 
-export function generateMetadata({
+type PageProps = {
+  params: Promise<{ id: string }>;
+};
+
+export async function generateMetadata({
   params,
-}: {
-  params: { id: string };
-}): Metadata {
+}: PageProps): Promise<Metadata> {
+  const { id } = await params;
+  const post = await getBoardPostById(id);
+
   return {
-    title: `게시글 - ${params.id}`,
-    description: "자유게시판 글입니다.",
+    title: post?.title ?? "게시글",
+    description: post?.content?.slice(0, 100) ?? "자유게시판 글입니다.",
     openGraph: {
-      title: `게시글 - ${params.id}`,
-      description: "자유게시판 글입니다.",
+      title: post?.title ?? "게시글",
+      description: post?.content?.slice(0, 100) ?? "자유게시판 글입니다.",
       images: [`${process.env.NEXT_PUBLIC_BASE_URL}/og/home.png`],
     },
     twitter: {
       card: "summary_large_image",
-      title: `게시글 - ${params.id}`,
-      description: "자유게시판 글입니다.",
+      title: post?.title ?? "게시글",
+      description: post?.content?.slice(0, 100) ?? "자유게시판 글입니다.",
       images: [`${process.env.NEXT_PUBLIC_BASE_URL}/og/home.png`],
     },
   };
 }
 
-export default async function BoardViewPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const post = await getBoardPostById(params.id);
+export default async function BoardViewPage({ params }: PageProps) {
+  const { id } = await params;
+  const post = await getBoardPostById(id);
   return (
     <>
       <SubBanner />
