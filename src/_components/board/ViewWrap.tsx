@@ -1,6 +1,5 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import LoadingSpinner from "../common/LoadingSpinner";
 import { convertToKstTime } from "@/_lib/convertToKstTime";
@@ -17,8 +16,7 @@ interface BoardData {
   content: string;
 }
 
-export default function ViewWrap() {
-  const { id } = useParams();
+export default function ViewWrap({ id }: { id: string }) {
   const [boardData, setBoardData] = useState<BoardData | null>(null);
 
   useEffect(() => {

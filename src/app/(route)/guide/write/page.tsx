@@ -1,4 +1,7 @@
 import YoutubeForm from "@/_components/manager/YoutubeForm";
+import { getMetaData } from "@/_lib/metadata";
+
+export const metadata = getMetaData({ page: "guide" });
 
 export default function GuideWritePage() {
   return (

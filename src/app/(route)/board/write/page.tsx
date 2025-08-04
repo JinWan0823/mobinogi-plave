@@ -1,6 +1,9 @@
 import SubBanner from "@/_components/board/SubBanner";
 import TabMenu from "@/_components/board/TabMenu";
 import WriteForm from "@/_components/board/WriteForm";
+import { getMetaData } from "@/_lib/metadata";
+
+export const metadata = getMetaData({ page: "board" });
 
 export default function BoardWritePage() {
   return (
