@@ -9,6 +9,7 @@ import { TiChevronRightOutline } from "react-icons/ti";
 
 export default function TabMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const [openCategory, setOpenCategory] = useState(false);
   const pathName = usePathname();
   const { data: session } = useSession();
 
@@ -16,20 +17,85 @@ export default function TabMenu() {
     setIsOpen((prev) => !prev);
   };
 
+  const toggleCategory = () => {
+    setOpenCategory((prev) => !prev);
+  };
+
   const isBoardList = pathName === "/board/list";
   const isBoardWrite = pathName === "/board/write";
   const isNoticeList = pathName === "/notice/list";
   const isNoticeWrite = pathName === "/notice/write";
+  const isBoardView = pathName.startsWith("/board/view");
 
-  const isBoardPage = isBoardList || isBoardWrite;
+  const isBoardPage = isBoardList || isBoardWrite || isBoardView;
   const isNoticePage = isNoticeList || isNoticeWrite;
 
   const renderTabText = () => {
     if (isBoardList) return "글 목록";
     if (isBoardWrite) return "글 작성";
+    if (isBoardView) return "게시글";
     if (isNoticeList) return "공지 목록";
     if (isNoticeWrite) return "공지 작성";
     return "";
+  };
+
+  const renderTabCategory = () => {
+    if (isBoardPage) return "자유게시판";
+    if (isNoticePage) return "공지사항";
+    return "";
+  };
+
+  const renderTabCatogoryLinks = () => {
+    if (isBoardPage) {
+      return (
+        <>
+          <li className="w-full p-4">
+            <Link
+              href="/board/list"
+              className="flex items-center justify-between"
+            >
+              자유게시판 <TiChevronRightOutline />
+            </Link>
+          </li>
+          <li className="w-full p-4 border-t-1 border-[#dfdfdf]">
+            <Link
+              href="/notice/list"
+              className="flex items-center justify-between"
+            >
+              공지사항 <TiChevronRightOutline />
+            </Link>
+          </li>
+        </>
+      );
+    }
+
+    if (isNoticePage) {
+      return (
+        <>
+          <li className="w-full p-4">
+            <Link
+              href="/notice/list"
+              className="flex items-center justify-between"
+            >
+              공지사항 <TiChevronRightOutline />
+            </Link>
+          </li>
+
+          {session?.user && (
+            <li className="w-full p-4 border-t-1 border-[#dfdfdf]">
+              <Link
+                href="/board/list"
+                className="flex items-center justify-between"
+              >
+                자유게시판 <TiChevronRightOutline />
+              </Link>
+            </li>
+          )}
+        </>
+      );
+    }
+
+    return null;
   };
 
   const renderTabLinks = () => {
@@ -91,8 +157,23 @@ export default function TabMenu() {
           <FaHome /> HOME
         </Link>
       </li>
-      {isBoardPage && <li className="w-[160px] p-4">자유게시판</li>}
-      {isNoticePage && <li className="w-[160px] p-4">공지사항</li>}
+
+      <li
+        className="w-[160px] p-4 relative
+        flex items-center justify-between
+        cursor-pointer"
+        onClick={toggleCategory}
+      >
+        {renderTabCategory()} <FaChevronDown className="text-point" />
+        {openCategory && (
+          <ul
+            className="absolute bottom-[-4px] left-0 translate-y-full
+              w-full bg-[#fff] shadow-xl border-1 border-[#dfdfdf] z-999"
+          >
+            {renderTabCatogoryLinks()}
+          </ul>
+        )}
+      </li>
 
       {(isBoardPage || isNoticePage) && (
         <li

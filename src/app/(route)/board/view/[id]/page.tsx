@@ -32,9 +32,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function BoardViewPage({ params }: PageProps) {
-  const { id } = await params;
-  const post = await getBoardPostById(id);
+export default async function BoardViewPage() {
   return (
     <>
       <SubBanner />
@@ -46,13 +44,8 @@ export default async function BoardViewPage({ params }: PageProps) {
       </div>
       <section className="py-12">
         <div className="w-[1140px] mx-auto">
-          {post ? (
-            <ViewWrap post={post} />
-          ) : (
-            <p className="text-center text-red-500">
-              게시글을 찾을 수 없습니다.
-            </p>
-          )}
+          <ViewWrap />
+
           <div className="flex justify-center mt-8">
             <Link
               href="/board/list"
