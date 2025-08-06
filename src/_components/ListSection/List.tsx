@@ -24,9 +24,11 @@ export default function List() {
 
   return (
     <>
-      <div className="w-[48%]">
+      <div className="w-full md:w-[48%]">
         <div className="flex items-center justify-between">
-          <p className="text-3xl font-bold pb-2">공지사항 & 이벤트</p>
+          <p className="text-2xl md:text-3xl font-bold pb-2">
+            공지사항 & 이벤트
+          </p>
           <Link
             href={"/notice/list"}
             className="text-[#aaaaaa] flex items-center"

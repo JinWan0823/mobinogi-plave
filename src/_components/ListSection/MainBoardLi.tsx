@@ -23,20 +23,23 @@ export default function MainBoardLi({ item }: NoticeProps) {
       >
         <div className="flex items-center justify-between">
           <CategoryBadge category={item.category} />
-          <span className="text-[#aaaaaa]">
+          <span className="text-[#aaaaaa] text-sm md:text-base">
             {convertToKstTime(item.createdAt)}
           </span>
         </div>
         <div className="flex items-start justify-between  mt-3">
-          <div className="flex items-center">
-            <p className="font-bold text-xl overflow-hidden text-ellipsis whitespace-nowrap">
-              {item.title}
-            </p>
+          <p
+            className="font-bold pr-10 overflow-hidden text-ellipsis whitespace-nowrap 
+            md:text-xl"
+          >
+            {item.title}
             <span className="font-medium text-sm text-[#aaa] pl-1 shrink-0">
               ({item.commentCount})
             </span>
-          </div>
-          <span className="text-[#aaaaaa] shrink-0">작성자 : {item.name}</span>
+          </p>
+          <span className="text-[#aaaaaa] shrink-0 text-sm md:text-base">
+            {item.name}
+          </span>
         </div>
       </Link>
     </li>

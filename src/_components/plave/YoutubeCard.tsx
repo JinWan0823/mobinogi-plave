@@ -19,7 +19,7 @@ export default function YoutubeCard({ item }: YoutubeCardProps) {
   return (
     <>
       <li>
-        <div className="w-[464px] h-[260px] rounded-[20px] flex-shrink-0 snap-start overflow-hidden relative bg-black">
+        <div className="w-[324px] md:w-[464px] aspect-video rounded-[20px] flex-shrink-0 snap-start overflow-hidden relative bg-black">
           {isPlaying ? (
             <iframe
               className="w-full h-full"

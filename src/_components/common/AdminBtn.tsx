@@ -29,8 +29,10 @@ export default function AdminBadge() {
       <button
         onClick={handleLogout}
         className="title bg-white
-        text-xl p-1 px-6 
-        rounded-full border-2 border-point"
+        p-1 px-2  text-sm
+        rounded-full border-2 border-point
+        sm:text-lg sm:px-4
+        md:px-6"
       >
         관리자 로그아웃
       </button>
@@ -41,8 +43,10 @@ export default function AdminBadge() {
     <button
       onClick={handleLogin}
       className="title bg-white
-        text-xl p-1 px-6 
-        rounded-full border-2 border-point"
+        p-1 px-2  text-sm
+        rounded-full border-2 border-point
+        sm:text-lg sm:px-4
+        md:px-6"
     >
       Login
     </button>

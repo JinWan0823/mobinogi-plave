@@ -11,7 +11,7 @@ export default function PlaveBanner() {
   const { videos, loading } = useYoutube();
   return (
     <section
-      className="bg-cover bg-center relative py-28"
+      className="bg-cover bg-center relative py-16 md:py-28"
       //이미지 출처 - https://namu.wiki/w/%E3%81%8B%E3%81%8F%E3%82%8C%E3%82%93%E3%81%BC(PLAVE)
       style={{ backgroundImage: "url(/main/plave_banner2.png)" }}
     >
@@ -23,19 +23,22 @@ export default function PlaveBanner() {
       <div className=" relative z-999">
         <div className="text-center flex flex-col justify-center items-center">
           {/* 이미지 출처 - https://namu.wiki/w/%E3%81%8B%E3%81%8F%E3%82%8C%E3%82%93%E3%81%BC(PLAVE) */}
-          <Image
-            src={"/main/plave_logo.png"}
-            width={240}
-            height={90}
-            alt="플레이브 로고"
-          />
-          <p className="title text-xl text-white mt-2">
+          <div className="w-[160px] md:w-[240px]">
+            <Image
+              src={"/main/plave_logo.png"}
+              width={240}
+              height={90}
+              alt="플레이브 로고"
+              className="w-full"
+            />
+          </div>
+          <p className="title md:text-xl text-white mt-2">
             플레이브의 최신 유튜브 동영상입니다
           </p>
         </div>
 
         <ul
-          className="scrollbar-none overflow-x-auto gap-4 flex mt-6 px-10"
+          className="scrollbar-none overflow-x-auto gap-4 flex mt-6 px-2 md:px-10"
           ref={listWrapperRef}
         >
           {videos.map((item, i) => (

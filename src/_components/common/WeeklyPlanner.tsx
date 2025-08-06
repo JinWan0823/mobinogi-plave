@@ -78,7 +78,7 @@ export default function WeeklyPlanner() {
   };
 
   return !noneWeekly ? null : (
-    <div className="fixed top-1/2 left-[40px] -translate-y-1/2 z-9999">
+    <div className="fixed top-1/2 left-[10px] -translate-y-1/2 z-9999 md:left-[40px]">
       <button
         type="button"
         onClick={handleClosePlanner}
@@ -88,7 +88,7 @@ export default function WeeklyPlanner() {
       </button>
       <div
         className="
-        p-4 w-[400px]
+        p-4 w-[95%] max-w-[400px]
         bg-center bg-cover
         shadow-xl
         "
