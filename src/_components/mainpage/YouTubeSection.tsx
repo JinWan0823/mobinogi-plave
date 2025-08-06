@@ -13,17 +13,19 @@ export default function YoutubeSection() {
   const { data: session } = useSession();
 
   return (
-    <section className="w-full py-40">
+    <section className="w-full py-16 md:py-28 lg:py-40 ">
       <div className="inner">
         <div
           className="pb-2 border-b-4 border-[#000]
           flex items-cener justify-between
         "
         >
-          <p className="text-3xl font-bold">클래스별 유튜브 가이드</p>
+          <p className="text-2xl md:text-3xl font-bold">
+            클래스별 유튜브 가이드
+          </p>
           {session?.user && <ManagerBtn link="/guide/list" />}
         </div>
-        <ul className="flex flex-wrap items-center mt-4 mb-8 gap-2">
+        <ul className="flex flex-wrap items-center mt-4 mb-8 gap-1 md:gap-2">
           {mobinogiClasses.map((item, idx) => (
             <ClassBtn
               key={idx}
@@ -44,7 +46,7 @@ export default function YoutubeSection() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-3 gap-4"
+              className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
             >
               {videos.map((item, idx) => (
                 <GuideCard key={idx} item={item} />

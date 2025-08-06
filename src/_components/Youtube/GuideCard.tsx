@@ -18,7 +18,7 @@ export default function GuideCard({ item }: YoutubeCardProps) {
   const videoId = new URL(item.youtubeLink).searchParams.get("v") || "";
 
   return (
-    <li className="w-[464px] h-[260px] cursor-pointer relative">
+    <li className="w-full aspect-video cursor-pointer relative">
       {item.noticeChk && (
         <Image
           src={`/main/notice.png`}

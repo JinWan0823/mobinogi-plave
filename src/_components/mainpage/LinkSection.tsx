@@ -5,14 +5,14 @@ import { links } from "@/_data/links";
 export default function LinkSection() {
   return (
     <section
-      className="w-full relative bg-cover bg-fixed"
+      className="w-full relative bg-cover bg-center bg-scroll md:bg-fixed"
       style={{ backgroundImage: "url(/main/mobinogi_banner.png)" }}
     >
       <div className="absolute inset-0 bg-point opacity-65" />
       <div
-        className="w-[1240px] mx-auto py-[120px] relative
+        className="max-w-[1240px] w-[98%] mx-auto py-[80px] relative
         flex flex-col items-center justify-center
-        z-999"
+        z-999 md:w-[95%] md:py-[120px]"
       >
         <Image
           src={"/main/collaboration.png"}
@@ -21,8 +21,9 @@ export default function LinkSection() {
           height={70}
         />
         <ul
-          className="w-full mt-16
-        flex flex-wrap items-center justify-between gap-y-10"
+          className="w-full mt-16 grid
+          grid-cols-2 md:grid-cols-3 lg:grid-cols-5
+          gap-4 md:gap-y-10"
         >
           {links.map((item, idx) => (
             <LinkList key={idx} item={item} />

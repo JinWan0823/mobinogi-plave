@@ -27,8 +27,8 @@ export default function NoticeList({ item }: NoticeProps) {
         <div className="flex items-center justify-between">
           {item.noticeChk ? (
             <span
-              className="p-1 px-4 bg-red-400 text-white rounded-full
-                          flex items-center justify-center gap-1"
+              className="text-sm p-1 px-4 bg-red-400 text-white rounded-full border-1
+                          flex items-center justify-center gap-1 md:text-base"
             >
               <BiSolidMegaphone /> 중요 공지
             </span>
@@ -36,15 +36,20 @@ export default function NoticeList({ item }: NoticeProps) {
             <CategoryBadge category={item.category} />
           )}
 
-          <span className="text-[#aaaaaa]">
+          <span className="text-[#aaaaaa] text-sm md:text-base">
             {convertToKstTime(item.createdAt)}
           </span>
         </div>
         <div className="flex items-start justify-between  mt-3">
-          <p className="font-bold text-xl pr-10 overflow-hidden text-ellipsis whitespace-nowrap">
+          <p
+            className="font-bold pr-10 overflow-hidden text-ellipsis whitespace-nowrap 
+            md:text-xl"
+          >
             {item.title}
           </p>
-          <span className="text-[#aaaaaa] shrink-0">{item.name}</span>
+          <span className="text-[#aaaaaa] shrink-0  text-sm md:text-base">
+            {item.name}
+          </span>
         </div>
       </Link>
     </li>

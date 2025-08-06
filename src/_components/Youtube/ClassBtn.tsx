@@ -8,9 +8,10 @@ export default function ClassBtn({ item, isActive, onClick }: BtnProps) {
   return (
     <li
       className={`
-        py-2 px-6 rounded-[16px]
-        text-lg font-bold border-2
+        py-1 px-3 rounded-[16px]
+        font-bold border-2
         cursor-pointer
+        md:text-lg md:py-2 md:px-6
         ${
           isActive
             ? "bg-white text-[#000] border-point"
