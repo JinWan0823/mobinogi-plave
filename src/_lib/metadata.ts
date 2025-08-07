@@ -72,6 +72,23 @@ export function getMetaData({ page }: MetadataParams) {
         },
       };
 
+    case "manager":
+      return {
+        title: "관리자페이지",
+        description: "접근 권한이 필요한 페이지입니다.",
+        openGraph: {
+          title: "관리자페이지",
+          description: "접근 권한이 필요한 페이지입니다.",
+          images: [`${baseUrl}/og/home.png`],
+        },
+        twitter: {
+          card: "summary_large_image",
+          title: "관리자페이지",
+          description: "접근 권한이 필요한 페이지입니다.",
+          images: [`${baseUrl}/og/home.png`],
+        },
+      };
+
     default:
       return {
         title: "MOBINOGI - PLAVE",
