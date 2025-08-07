@@ -58,13 +58,13 @@ export default function CommentForm({ setCommentUpload }: CommentProps) {
       className="border-1 border-[#dfdfdf] p-4 my-4 rounded"
     >
       <div className="flex items-center justify-between">
-        <div className="mb-2 flex gap-2 text-sm">
+        <div className="mb-2 flex flex-col gap-2 text-sm md:flex-row">
           <Input type="text" value={name} onChange={setName} />
           <Input type="password" value={password} onChange={setPassword} />
         </div>
         <button
           type="submit"
-          className="bg-point text-white font-bold py-1 px-6 rounded"
+          className="hidden md:block bg-point text-white font-bold py-1 px-6 rounded"
         >
           작성하기
         </button>
@@ -76,6 +76,12 @@ export default function CommentForm({ setCommentUpload }: CommentProps) {
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />
+      <button
+        type="submit"
+        className="block md:hidden bg-point text-white font-bold py-1 px-6 rounded"
+      >
+        작성하기
+      </button>
     </form>
   );
 }

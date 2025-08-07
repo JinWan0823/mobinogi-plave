@@ -19,7 +19,7 @@ export function getMetaData({ page }: MetadataParams) {
           card: "summary_large_image",
           title: "공지사항&이벤트",
           description: "모비노기,플레이브 관련 중요 공지사항&이벤트 알림",
-          images: [`${baseUrl}/og/players.png`],
+          images: [`${baseUrl}/og/home.png`],
         },
       };
     case "board":

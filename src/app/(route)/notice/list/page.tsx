@@ -9,14 +9,11 @@ export default function NoticeListPage() {
   return (
     <div>
       <SubBanner />
-      <div
-        className="menu-tab w-full
-        bg-[#fff] shadow-xl"
-      >
-        <TabMenu />
-      </div>
-      <section className="py-12">
-        <div className="w-[1140px] mx-auto mt-4">
+
+      <TabMenu />
+
+      <section className="py-6 md:py-12">
+        <div className="max-w-[1140px] w-[95%] mx-auto mt-4">
           <NoticeWrap />
         </div>
       </section>

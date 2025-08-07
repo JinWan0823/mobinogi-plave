@@ -31,9 +31,9 @@ export default function NoticeWrap() {
 
   return (
     <>
-      <div className="flex items-end justify-between mb-2">
-        <div className="flex items-center gap-1">
-          <div className="w-[220px]">
+      <div className="flex flex-col md:flex-row w-full items-start justify-between mb-2">
+        <div className="w-full md:w-auto flex flex-col md:flex-row items-center gap-1">
+          <div className="w-full md:w-[220px]">
             <CategoryOpt
               selectedClasses={selectedClasses}
               setSelectedClasses={setSelectedClasses}
@@ -42,10 +42,10 @@ export default function NoticeWrap() {
               setSearchQuery={setSearchQuery}
             />
           </div>
-          <form onSubmit={handleSearchSubmit} className="relative">
+          <form onSubmit={handleSearchSubmit} className="relative w-full">
             <input
               type="text"
-              className="w-[400px] p-2
+              className="w-full md:max-w-[400px] p-2
               border border-[#dfdfdf] rounded-lg
               relative"
               placeholder="제목또는 작성자를 검색해주세요."
@@ -62,7 +62,7 @@ export default function NoticeWrap() {
             </button>
           </form>
         </div>
-        <div className="flex items-end gap-1">
+        <div className="hidden md:flex items-end gap-1">
           <p className="text-sm text-[#aaaaaa] text-right p-1">
             총 게시글 : {listCount}
           </p>
@@ -74,7 +74,7 @@ export default function NoticeWrap() {
         border-1 border-[#dfdfdf]"
       >
         <ul>
-          <li className="flex justify-between items-center p-4 py-2 border-b border-[#dfdfdf]">
+          <li className="hidden md:flex justify-between items-center p-4 py-2 border-b border-[#dfdfdf]">
             <div className="w-[140px] flex justify-center">
               <span>카테고리</span>
             </div>
@@ -107,6 +107,11 @@ export default function NoticeWrap() {
         pageNum={pageNum}
         listCount={listCount}
       />
+      {session?.user && (
+        <div className="flex justify-center mt-4 md:hidden">
+          <WriteBtn type="notice" />
+        </div>
+      )}
     </>
   );
 }

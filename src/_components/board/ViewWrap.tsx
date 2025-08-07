@@ -37,13 +37,15 @@ export default function ViewWrap() {
       <div className="w-full">
         {boardData ? (
           <>
-            <h1 className="font-bold text-4xl">{boardData.title}</h1>
+            <h1 className="font-bold text-2xl md:text-4xl">
+              {boardData.title}
+            </h1>
             <div
               className="overview mt-2 pb-4
               flex items-center justify-between"
             >
-              <div className="lf-box text-lg flex items-center">
-                <span className="w-[80px] h-[3px] bg-[#000] mr-2" />
+              <div className="lf-box md:text-lg flex items-center">
+                <span className="hidden md:block w-[80px] h-[3px] bg-[#000] mr-2" />
                 <p>
                   <span className="font-bold mr-2">CATEGORY</span>
                   {boardData.category}

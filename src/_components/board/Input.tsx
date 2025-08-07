@@ -15,7 +15,7 @@ export default function Input({ type, value, onChange }: InputProps) {
       </label>
       <input
         type={type}
-        className="w-[240px] p-1 px-2 bg-[#fbfbfb] border-[#dfdfdf] border-1 rounded-lg"
+        className="w-full md:w-[240px] p-1 px-2 bg-[#fbfbfb] border-[#dfdfdf] border-1 rounded-lg"
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />

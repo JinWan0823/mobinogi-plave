@@ -81,16 +81,14 @@ export default function TabMenu() {
             </Link>
           </li>
 
-          {session?.user && (
-            <li className="w-full p-4 border-t-1 border-[#dfdfdf]">
-              <Link
-                href="/board/list"
-                className="flex items-center justify-between"
-              >
-                자유게시판 <TiChevronRightOutline />
-              </Link>
-            </li>
-          )}
+          <li className="w-full p-4 border-t-1 border-[#dfdfdf]">
+            <Link
+              href="/board/list"
+              className="flex items-center justify-between"
+            >
+              자유게시판 <TiChevronRightOutline />
+            </Link>
+          </li>
         </>
       );
     }
@@ -151,51 +149,56 @@ export default function TabMenu() {
     return null;
   };
   return (
-    <ul className="mx-auto w-[1140px] flex items-center font-bold">
-      <li className="w-[160px] p-4 border-[#dfdfdf] border-l-1 border-r-1">
-        <Link href="/" className="w-full flex items-center gap-2 text-point">
-          <FaHome /> HOME
-        </Link>
-      </li>
+    <div
+      className="menu-tab w-full
+        bg-[#fff] shadow-xl text-sm md:text-base"
+    >
+      <ul className="mx-auto max-w-[1140px] w-full flex items-center font-bold">
+        <li className="w-[160px] p-4 border-[#dfdfdf] border-l-1 border-r-1">
+          <Link href="/" className="w-full flex items-center gap-2 text-point">
+            <FaHome /> HOME
+          </Link>
+        </li>
 
-      <li
-        className="w-[160px] p-4 relative
+        <li
+          className="w-[160px] p-4 relative
         flex items-center justify-between
         cursor-pointer"
-        onClick={toggleCategory}
-      >
-        {renderTabCategory()} <FaChevronDown className="text-point" />
-        {openCategory && (
-          <ul
-            className="absolute bottom-[-4px] left-0 translate-y-full
-              w-full bg-[#fff] shadow-xl border-1 border-[#dfdfdf] z-999"
-          >
-            {renderTabCatogoryLinks()}
-          </ul>
-        )}
-      </li>
-
-      {(isBoardPage || isNoticePage) && (
-        <li
-          className="relative w-[160px] p-4
-          border-l-1 border-r-1 border-[#dfdfdf]
-          flex items-center justify-between
-          cursor-pointer"
-          onClick={toggleTabMenu}
+          onClick={toggleCategory}
         >
-          <>
-            {renderTabText()} <FaChevronDown className="text-point" />
-          </>
-          {isOpen && (
+          {renderTabCategory()} <FaChevronDown className="text-point" />
+          {openCategory && (
             <ul
               className="absolute bottom-[-4px] left-0 translate-y-full
               w-full bg-[#fff] shadow-xl border-1 border-[#dfdfdf] z-999"
             >
-              {renderTabLinks()}
+              {renderTabCatogoryLinks()}
             </ul>
           )}
         </li>
-      )}
-    </ul>
+
+        {(isBoardPage || isNoticePage) && (
+          <li
+            className="relative w-[160px] p-4
+          border-l-1 border-r-1 border-[#dfdfdf]
+          flex items-center justify-between
+          cursor-pointer"
+            onClick={toggleTabMenu}
+          >
+            <>
+              {renderTabText()} <FaChevronDown className="text-point" />
+            </>
+            {isOpen && (
+              <ul
+                className="absolute bottom-[-4px] left-0 translate-y-full
+              w-full bg-[#fff] shadow-xl border-1 border-[#dfdfdf] z-999"
+              >
+                {renderTabLinks()}
+              </ul>
+            )}
+          </li>
+        )}
+      </ul>
+    </div>
   );
 }

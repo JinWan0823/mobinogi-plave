@@ -4,15 +4,19 @@ import Link from "next/link";
 import NoticeList from "./NoticeLi";
 import { TbArrowBigRightLinesFilled } from "react-icons/tb";
 import { useEffect, useState } from "react";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 export default function List() {
   const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(false);
   const fetchData = async () => {
+    setLoading(true);
     try {
       const res = await fetch(`/api/notice`);
       if (!res.ok) throw new Error("서버 응답 실패");
       const data = await res.json();
       setList(data.board.slice(0, 6));
+      setLoading(false);
     } catch (err) {
       console.error("서버 에러", err);
     }
@@ -26,7 +30,7 @@ export default function List() {
     <>
       <div className="w-full md:w-[48%]">
         <div className="flex items-center justify-between">
-          <p className="text-2xl md:text-3xl font-bold pb-2">
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold pb-2">
             공지사항 & 이벤트
           </p>
           <Link
@@ -40,6 +44,7 @@ export default function List() {
           {list.map((item, idx) => (
             <NoticeList item={item} key={idx} />
           ))}
+          {loading && <LoadingSpinner />}
         </ul>
       </div>
     </>

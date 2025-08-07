@@ -36,14 +36,11 @@ export default async function BoardViewPage() {
   return (
     <>
       <SubBanner />
-      <div
-        className="menu-tab w-full
-        bg-[#fff] shadow-xl"
-      >
-        <TabMenu />
-      </div>
+
+      <TabMenu />
+
       <section className="py-12">
-        <div className="w-[1140px] mx-auto">
+        <div className="max-w-[1140px] w-[95%] mx-auto">
           <ViewWrap />
 
           <div className="flex justify-center mt-8">

@@ -79,31 +79,32 @@ export default function BoardList({ item, user, setUpdateData }: ListProps) {
           href={item.noticeLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex justify-between items-center p-4 border-b border-[#dfdfdf]"
+          className="flex flex-col justify-between items-start p-2 border-b border-[#dfdfdf]
+          md:flex-row md:items-center md:p-4"
         >
-          <div className="w-[140px] flex justify-center">
+          <div className="w-auto md:w-[140px] flex justify-center">
             {item.noticeChk ? (
               <span
-                className="p-1 px-4 bg-red-400 text-white rounded-full
+                className="p-1 px-4 text-sm bg-red-400 text-white rounded-full
                 flex items-center justify-center gap-1"
               >
                 <BiSolidMegaphone /> 중요공지
               </span>
             ) : (
-              <span className="p-1 px-4 text-[#aaaaaa] border-1 border-1-[#aaaaaa] rounded-full">
+              <span className="p-1 px-4 text-sm text-[#aaaaaa] border-1 border-1-[#aaaaaa] rounded-full">
                 {item.category}
               </span>
             )}
           </div>
-          <div className="flex-1 w-full overflow-hidden">
+          <div className="flex-1 w-full overflow-hidden mt-2 md:mt-0">
             <h3 className="text-lg font-semibold px-2 ">{item.title} </h3>
           </div>
 
           <div className="flex items-center gap-2 text-center">
-            <span className="text-sm text-gray-600 w-[100px] ">
+            <span className="text-sm text-gray-600 w-auto px-2 md:w-[100px] ">
               {item.name}
             </span>
-            <span className="text-sm text-gray-600 w-[100px]">
+            <span className="text-sm text-gray-600 w-auto px-2 md:w-[100px]">
               {convertToKstTime(item.createdAt)}
             </span>
 
@@ -152,16 +153,18 @@ export default function BoardList({ item, user, setUpdateData }: ListProps) {
     <li>
       <Link
         href={`/board/view/${item._id}`}
-        className="flex justify-between items-center p-4 border-b border-[#dfdfdf]"
+        className="flex flex-col justify-between items-start p-4 border-b border-[#dfdfdf]
+          md:flex-row md:items-center
+        "
       >
-        <div className="w-[140px] flex justify-center">
+        <div className="w-auto md:w-[140px] flex justify-center">
           <span className="p-1 px-4 text-[#aaaaaa] border-1 border-1-[#aaaaaa] rounded-full">
             {item.category}
           </span>
         </div>
-        <div className="flex-1 w-full overflow-hidden">
+        <div className="flex-1 w-full overflow-hidden mt-2 md:mt-0">
           <h3 className="text-lg font-semibold px-2 ">
-            {item.title}{" "}
+            {item.title}
             <span className="text-sm ml-1 font-medium text-[#aaa]">
               댓글({item.commentCount})
             </span>
@@ -169,8 +172,10 @@ export default function BoardList({ item, user, setUpdateData }: ListProps) {
         </div>
 
         <div className="flex items-center gap-2 text-center">
-          <span className="text-sm text-gray-600 w-[100px] ">{item.name}</span>
-          <span className="text-sm text-gray-600 w-[100px]">
+          <span className="text-sm text-gray-600 w-auto px-2 md:w-[100px] ">
+            {item.name}
+          </span>
+          <span className="text-sm text-gray-600 w-auto px-2 md:w-[100px]">
             {convertToKstTime(item.createdAt)}
           </span>
         </div>

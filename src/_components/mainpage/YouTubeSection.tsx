@@ -20,7 +20,7 @@ export default function YoutubeSection() {
           flex items-cener justify-between
         "
         >
-          <p className="text-2xl md:text-3xl font-bold">
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold">
             클래스별 유튜브 가이드
           </p>
           {session?.user && <ManagerBtn link="/guide/list" />}
