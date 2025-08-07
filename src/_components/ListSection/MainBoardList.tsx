@@ -4,16 +4,20 @@ import Link from "next/link";
 import { TbArrowBigRightLinesFilled } from "react-icons/tb";
 import { useEffect, useState } from "react";
 import MainBoardLi from "./MainBoardLi";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 export default function MainBoardList() {
   const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(false);
   const fetchData = async () => {
+    setLoading(true);
     try {
       const res = await fetch(`/api/board`);
       if (!res.ok) throw new Error("서버 응답 실패");
       const data = await res.json();
 
       setList(data.board.slice(0, 5));
+      setLoading(false);
     } catch (err) {
       console.error("서버 에러", err);
     }
@@ -27,7 +31,9 @@ export default function MainBoardList() {
     <>
       <div className="w-full md:w-[48%] mt-8 md:mt-0">
         <div className="flex items-center justify-between">
-          <p className="text-2xl md:text-3xl font-bold pb-2">자유게시판</p>
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold pb-2">
+            자유게시판
+          </p>
           <Link
             href={"/board/list"}
             className="text-[#aaaaaa] flex items-center"
@@ -39,6 +45,7 @@ export default function MainBoardList() {
           {list.map((item, idx) => (
             <MainBoardLi item={item} key={idx} />
           ))}
+          {loading && <LoadingSpinner />}
         </ul>
       </div>
     </>

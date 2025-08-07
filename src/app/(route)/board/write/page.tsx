@@ -9,15 +9,12 @@ export default function BoardWritePage() {
   return (
     <>
       <SubBanner />
-      <div
-        className="menu-tab w-full
-            bg-[#fff] shadow-xl"
-      >
-        <TabMenu />
-      </div>
+
+      <TabMenu />
+
       <section className="py-12">
         <div
-          className="p-4 w-[1140px] mx-auto bg-[#efefef] shadow-xl"
+          className="p-2 md:p-4 max-w-[1140px] w-[95%] mx-auto bg-[#efefef] shadow-xl"
           style={{ backgroundImage: `url(/main/paper2.jpg)` }}
         >
           <h1>자유 게시판 - 글 작성</h1>

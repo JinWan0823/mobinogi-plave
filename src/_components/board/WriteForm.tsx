@@ -53,10 +53,10 @@ export default function WriteForm() {
   return (
     <form
       onSubmit={handleSubmitBoard}
-      className="w-full h-full p-4 mx-auto
+      className="w-full h-full p-2 md:p-4 mx-auto
             border-2 border-[#dfdfdf]"
     >
-      <div className="mb-2 flex gap-2">
+      <div className="mb-2 flex flex-col gap-2 md:flex-row">
         <Input type="text" value={name} onChange={setName} />
         <Input type="password" value={password} onChange={setPassword} />
       </div>
@@ -76,7 +76,7 @@ export default function WriteForm() {
       </div>
 
       <textarea
-        className="w-full min-h-[400px] p-2 mt-4
+        className="w-full min-h-[260px] md:min-h-[400px] p-2 mt-4
         border-[#dfdfdf] border-1 rounded-lg bg-[#fff]"
         value={content}
         onChange={(e) => setContent(e.target.value)}
